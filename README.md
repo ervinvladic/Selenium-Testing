@@ -2,4 +2,4 @@
 
 Selenium testing  
 
-Team : Ervin Vladic Tin Radisic Harun Kunovac
+Team : Ervin Vladic, Tin Radisic, Harun Kunovac
