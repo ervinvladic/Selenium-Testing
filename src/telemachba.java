@@ -206,7 +206,7 @@ class telemachba {
 		
 }
 	@Test
-	void atelefonijaTest() throws InterruptedException {
+	void telefonijaTest() throws InterruptedException {
 		
 		webDriver.get(baseUrl);
 		webDriver.manage().window().maximize();
@@ -277,6 +277,80 @@ class telemachba {
 		WebElement traziteButton = webDriver.findElement(By.cssSelector("#phonebook-private-app > div > form > div > div.field-wrapper.col-xs-12.col-sm-offset-6.col-sm-6.col-lg-offset-0.col-lg-3.clearfix > button"));
 		traziteButton.click();
 		Thread.sleep(5000);
+		
+	}
+	
+	@Test
+	void podrskaTest() throws InterruptedException {
+		webDriver.get(baseUrl);
+		webDriver.manage().window().maximize();
+		Thread.sleep(5000);
+		
+		WebElement podrskaButton = webDriver.findElement(By.cssSelector("#siteHeader > div.container > div > div > nav > ul > li:nth-child(5) > a"));
+		podrskaButton.click();
+		Thread.sleep(5000);
+		
+		WebElement glavniSearch = webDriver.findElement(By.cssSelector("#google-search-app > div > div > div.js-google-custom-search-form.p-google-custom-search-form.clearfix > div > form > input"));
+		glavniSearch.sendKeys("Test");
+		Thread.sleep(3000);
+		
+		WebElement glavniSearchButton = webDriver.findElement(By.cssSelector("#google-search-app > div > div > div.js-google-custom-search-form.p-google-custom-search-form.clearfix > div > span"));
+		glavniSearchButton.click();
+		Thread.sleep(5000);
+		
+		
+		WebElement televizijaButton = webDriver.findElement(By.cssSelector("#google-search-app > div > div > div.row.submenu-secondary-wrapper > div.col-md-7.menu-list-wrapper > ul > li:nth-child(1) > a"));
+		televizijaButton.click();
+		Thread.sleep(5000);
+		
+		WebElement searchTelevizija = webDriver.findElement(By.cssSelector("#google-search-app > div.js-google-custom-search-form.p-google-custom-search-form.clearfix > div > form > input"));
+		searchTelevizija.sendKeys("Test");
+		Thread.sleep(3000);
+		
+		WebElement searchTelevizijaButton = webDriver.findElement(By.cssSelector("#google-search-app > div.js-google-custom-search-form.p-google-custom-search-form.clearfix > div > span"));
+		searchTelevizijaButton.click();
+		Thread.sleep(5000);
+		
+		
+		WebElement internetButton = webDriver.findElement(By.cssSelector("#content > section.c-support-category-submenu.js-support-category-submenu.js-height-support-category-submenu.theme-bg.without-small-title.first-page-element > div > div > div.row.submenu-secondary-wrapper > div.col-md-7.menu-list-wrapper > ul > li:nth-child(2) > a"));
+		internetButton.click();
+		Thread.sleep(5000);
+		
+		WebElement searchInternet = webDriver.findElement(By.cssSelector("#google-search-app > div.js-google-custom-search-form.p-google-custom-search-form.clearfix > div > form > input"));
+		searchInternet.sendKeys("Test");
+		Thread.sleep(3000);
+		
+		WebElement searchInternetButton = webDriver.findElement(By.cssSelector("#google-search-app > div.js-google-custom-search-form.p-google-custom-search-form.clearfix > div > span"));
+		searchInternetButton.click();
+		Thread.sleep(5000);
+		
+		
+		WebElement telefonijaButton = webDriver.findElement(By.cssSelector("#content > section.c-support-category-submenu.js-support-category-submenu.js-height-support-category-submenu.theme-bg.without-small-title.first-page-element > div > div > div.row.submenu-secondary-wrapper > div.col-md-7.menu-list-wrapper > ul > li:nth-child(3) > a"));
+		telefonijaButton.click();
+		Thread.sleep(5000);
+		
+		WebElement searchTelefonija = webDriver.findElement(By.cssSelector("#google-search-app > div.js-google-custom-search-form.p-google-custom-search-form.clearfix > div > form > input"));
+		searchTelefonija.sendKeys("Test");
+		Thread.sleep(3000);
+		
+		WebElement searchTelefonijaButton = webDriver.findElement(By.cssSelector("#google-search-app > div.js-google-custom-search-form.p-google-custom-search-form.clearfix > div > span"));
+		searchTelefonijaButton.click();
+		Thread.sleep(5000);
+		
+		WebElement prikljucenjeButton = webDriver.findElement(By.cssSelector("#content > section.c-support-category-submenu.js-support-category-submenu.js-height-support-category-submenu.theme-bg.without-small-title.first-page-element > div > div > div.row.submenu-secondary-wrapper > div.col-md-7.menu-list-wrapper > ul > li:nth-child(4) > a"));
+		prikljucenjeButton.click();
+		Thread.sleep(5000);
+		
+		WebElement searchPrikljucenje = webDriver.findElement(By.cssSelector("#google-search-app > div.js-google-custom-search-form.p-google-custom-search-form.clearfix > div > form > input"));
+		searchPrikljucenje.sendKeys("Test");
+		Thread.sleep(3000);
+		
+		WebElement searchPrikljucenjeButton = webDriver.findElement(By.cssSelector("#google-search-app > div.js-google-custom-search-form.p-google-custom-search-form.clearfix > div > span"));
+		searchPrikljucenjeButton.click();
+		Thread.sleep(5000);
+		
+		
+		
 		
 	}
 	
