@@ -7,6 +7,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -79,6 +80,7 @@ class telemachba {
 		WebElement procitajSaglasnost=webDriver.findElement(By.cssSelector("#content > section > div > div.package-container > div.form-wrapper > form > div:nth-child(5) > label > a"));
 		procitajSaglasnost.click();
 		Thread.sleep(3000);
+		
 		
 	}
 	@Test
@@ -354,4 +356,68 @@ class telemachba {
 		
 	}
 	
+	@Test
+	void mojTelemachTest() throws InterruptedException {
+		webDriver.get(baseUrl);
+		webDriver.manage().window().maximize();
+		Thread.sleep(3000);
+		
+		WebElement aplikacijeButton = webDriver.findElement(By.cssSelector("#siteHeader > div.container > div > div > nav > ul > li:nth-child(4) > a"));
+		aplikacijeButton.click();
+		Thread.sleep(3000);
+		
+		WebElement mojaTelevizijaButton = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[3]/div/div[2]/ul[1]/li[1]/a/span"));
+		mojaTelevizijaButton.click();
+		Thread.sleep(3000);
+		
+		WebElement mojInternetButton = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[3]/div/div[2]/ul[1]/li[2]/a/span"));
+		mojInternetButton.click();
+		Thread.sleep(3000);
+		
+		WebElement mojaTelefonijaButton = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[3]/div/div[2]/ul[1]/li[3]/a/span"));
+		mojaTelefonijaButton.click();
+		Thread.sleep(3000);
+		
+		WebElement mojiUredjajiButton = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[3]/div/div[2]/ul[1]/li[4]/a/span"));
+		mojiUredjajiButton.click();
+		Thread.sleep(3000);
+		
+		WebElement mojiRacuniIuplateButton = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[3]/div/div[2]/ul[2]/li[1]/a/span"));
+		mojiRacuniIuplateButton.click();
+		Thread.sleep(3000);
+		
+		WebElement unifiButton = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[3]/div/div[2]/ul[2]/li[2]/a/span"));
+		unifiButton.click();
+		Thread.sleep(3000);
+		
+		WebElement eonButton = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[3]/div/div[2]/ul[2]/li[3]/a/span"));
+		eonButton.click();
+		Thread.sleep(3000);
+		
+		WebElement unifonButton = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[3]/div/div[2]/ul[2]/li[4]/a/span/span"));
+		unifonButton.click();
+		Thread.sleep(3000);
+		
+		WebElement aktivirajMojTelemach = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[4]/div/div/div/div[3]/a"));
+		aktivirajMojTelemach.click();
+		Thread.sleep(3000);
+		
+		WebElement korisnickoIme = webDriver.findElement(By.xpath("/html/body/app-root/app-login/div/div/div/div[2]/div/form/mat-form-field[1]/div/div[1]/div/input"));
+		korisnickoIme.sendKeys("test.tester@gmail.com");
+		Thread.sleep(3000);
+		
+		WebElement lozinka = webDriver.findElement(By.xpath("/html/body/app-root/app-login/div/div/div/div[2]/div/form/mat-form-field[2]/div/div[1]/div/input"));
+		lozinka.sendKeys("testnalozinka");
+		Thread.sleep(3000);
+		
+		WebElement zapamtiMe = webDriver.findElement(By.xpath("/html/body/app-root/app-login/div/div/div/div[2]/div/form/div/mat-checkbox/label/div"));
+		zapamtiMe.click();
+		Thread.sleep(3000);
+		
+		WebElement ulogujSe = webDriver.findElement(By.xpath("/html/body/app-root/app-login/div/div/div/div[2]/div/form/button"));
+		ulogujSe.click();
+		Thread.sleep(3000);
+		
+		
+	}
 }
