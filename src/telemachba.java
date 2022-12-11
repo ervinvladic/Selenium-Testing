@@ -48,9 +48,16 @@ class telemachba {
 		WebElement EONPaketiButton = webDriver.findElement(By.cssSelector("#siteHeader > div.container > div > div > nav > ul > li:nth-child(1) > a"));
 		EONPaketiButton.click();
 		
-		WebElement prelistajDoNaruciButtona=webDriver.findElement(By.cssSelector("body > div.page-wrap > section.eon-vertical-packages.js-eon-vertical-packages.js-open-footprint.banner-shadow > div > ul > li.bundle-item.package-wrap.package-class-2 > div.bundle-content.featured > ul:nth-child(3) > li > ul"));
+		Thread.sleep(3000);
 		
+		JavascriptExecutor scroll1 = (JavascriptExecutor) webDriver;
+		scroll1.executeScript("window.scrollBy(0,300)", "");
 		Thread.sleep(5000);
+		
+		JavascriptExecutor scroll = (JavascriptExecutor) webDriver;
+		scroll.executeScript("window.scrollBy(300,1400)", "");
+		Thread.sleep(2000);
+		
 		WebElement naruciButton = webDriver.findElement(By.cssSelector(" body > div.page-wrap > section.eon-vertical-packages.js-eon-vertical-packages.js-open-footprint.banner-shadow > div > ul > li.bundle-item.package-wrap.package-class-2 > div.bundle-content.featured > div.buttons-section > a"));
 		
 		naruciButton.click();
@@ -67,6 +74,10 @@ class telemachba {
 		WebElement Email = webDriver.findElement(By.cssSelector("#content > section > div > div.package-container > div.form-wrapper > form > div:nth-child(3) > input"));
 		Email.sendKeys("test.tester@gmail.com");
 		Thread.sleep(3000);
+		
+		JavascriptExecutor scroll2 = (JavascriptExecutor) webDriver;
+		scroll2.executeScript("window.scrollBy(0,300)", "");
+		Thread.sleep(5000);
 		
 		WebElement saglasnost1=webDriver.findElement(By.cssSelector("#content > section > div > div.package-container > div.form-wrapper > form > div:nth-child(5) > label > span"));
 		saglasnost1.click();
@@ -366,6 +377,10 @@ class telemachba {
 		aplikacijeButton.click();
 		Thread.sleep(3000);
 		
+		JavascriptExecutor scroll = (JavascriptExecutor) webDriver;
+		scroll.executeScript("window.scrollBy(0,1200)", "");
+		Thread.sleep(3000);
+		
 		WebElement mojaTelevizijaButton = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[3]/div/div[2]/ul[1]/li[1]/a/span"));
 		mojaTelevizijaButton.click();
 		Thread.sleep(3000);
@@ -398,6 +413,10 @@ class telemachba {
 		unifonButton.click();
 		Thread.sleep(3000);
 		
+		JavascriptExecutor scroll1 = (JavascriptExecutor) webDriver;
+		scroll1.executeScript("window.scrollBy(0,300)", "");
+		Thread.sleep(3000);
+		
 		WebElement aktivirajMojTelemach = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[4]/div/div/div/div[3]/a"));
 		aktivirajMojTelemach.click();
 		Thread.sleep(3000);
@@ -420,4 +439,72 @@ class telemachba {
 		
 		
 	}
+	
+	@Test
+	void programskaShemaTest() throws InterruptedException {
+		webDriver.get(baseUrl);
+		webDriver.manage().window().maximize();
+		Thread.sleep(3000);
+		
+		WebElement EONTVButton = webDriver.findElement(By.xpath("/html/body/div[3]/header/div[2]/div/div/nav/ul/li[2]/a"));
+		EONTVButton.click();
+		Thread.sleep(3000);
+		
+		WebElement ProgramskaShemaButton = webDriver.findElement(By.xpath("/html/body/div[3]/header/div[2]/div/div/nav/ul/li[2]/ul/li[3]/a"));
+		ProgramskaShemaButton.click();
+		Thread.sleep(3000);
+		
+		JavascriptExecutor scroll = (JavascriptExecutor) webDriver;
+		scroll.executeScript("window.scrollBy(0,600)", "");
+		Thread.sleep(3000);
+		
+		WebElement PosebnaVrstaKanala = webDriver.findElement(By.xpath("/html/body/div[3]/main/div/form/section/div[2]/div[2]/div[1]/div/div/div[1]/div/div[1]/div/div/input"));
+		PosebnaVrstaKanala.click();
+		Thread.sleep(3000);
+		
+		WebElement dokumentarni = webDriver.findElement(By.xpath("/html/body/div[3]/main/div/form/section/div[2]/div[2]/div[1]/div/div/div/div/div[1]/div/ul/li[2]"));
+		dokumentarni.click();
+		Thread.sleep(3000);
+		
+		WebElement search = webDriver.findElement(By.xpath("/html/body/div[3]/main/div/form/section/div[2]/div[2]/div[1]/div/div/div/div/div[2]/input"));
+		search.sendKeys("discovery");
+		Thread.sleep(3000);
+		
+		
+		WebElement startPaket = webDriver.findElement(By.xpath("/html/body/div[3]/main/div/form/section/div[2]/div[1]/div/ul/li[2]/a"));
+		startPaket.click();
+		Thread.sleep(3000);
+		
+		WebElement osnovniPaket = webDriver.findElement(By.xpath("/html/body/div[3]/main/div/form/section/div[2]/div[1]/div/ul/li[3]/a"));
+		osnovniPaket.click();
+		Thread.sleep(3000);
+		
+		WebElement prosireniPaket = webDriver.findElement(By.xpath("/html/body/div[3]/main/div/form/section/div[2]/div[1]/div/ul/li[4]/a"));
+		prosireniPaket.click();
+		Thread.sleep(3000);
+		
+		WebElement HBOpaket = webDriver.findElement(By.xpath("/html/body/div[3]/main/div/form/section/div[2]/div[1]/div/ul/li[5]/a"));
+		HBOpaket.click();
+		Thread.sleep(3000);
+		
+		WebElement CinemaxPaket = webDriver.findElement(By.xpath("/html/body/div[3]/main/div/form/section/div[2]/div[1]/div/ul/li[6]/a"));
+		CinemaxPaket.click();
+		Thread.sleep(3000);
+		
+		WebElement PinkPaket = webDriver.findElement(By.xpath("/html/body/div[3]/main/div/form/section/div[2]/div[1]/div/ul/li[7]/a"));
+		PinkPaket.click();
+		Thread.sleep(3000);
+		
+		WebElement HBOPremium = webDriver.findElement(By.xpath("/html/body/div[3]/main/div/form/section/div[2]/div[1]/div/ul/li[8]/a"));
+		HBOPremium.click();
+		Thread.sleep(3000);
+		
+		WebElement ZadrugaPaket = webDriver.findElement(By.xpath("/html/body/div[3]/main/div/form/section/div[2]/div[1]/div/ul/li[9]/a"));
+		ZadrugaPaket.click();
+		Thread.sleep(3000);
+		
+		WebElement CinestarPremiere = webDriver.findElement(By.xpath("/html/body/div[3]/main/div/form/section/div[2]/div[1]/div/ul/li[10]/a"));
+		CinestarPremiere.click();
+		Thread.sleep(3000);
+}
 }
