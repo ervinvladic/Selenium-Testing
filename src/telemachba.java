@@ -507,4 +507,119 @@ class telemachba {
 		CinestarPremiere.click();
 		Thread.sleep(3000);
 }
+	@Test
+	void EONTVTest() throws InterruptedException {
+		webDriver.get(baseUrl);
+		webDriver.manage().window().maximize();
+		Thread.sleep(3000);
+		
+		WebElement EONTVButton = webDriver.findElement(By.xpath("/html/body/div[3]/header/div[2]/div/div/nav/ul/li[2]/a"));
+		EONTVButton.click();
+		Thread.sleep(3000);
+		
+	
+		JavascriptExecutor scroll = (JavascriptExecutor) webDriver;
+		scroll.executeScript("window.scrollBy(0,1800)", "");
+		Thread.sleep(3000);
+		
+		WebElement EONAplikacija = webDriver.findElement(By.xpath("/html/body/div[3]/section[2]/div[2]/div/ul/li[2]/a"));
+		EONAplikacija.click();
+		Thread.sleep(3000);
+		
+		WebElement Dodatniuredjaji = webDriver.findElement(By.xpath("/html/body/div[3]/section[2]/div[2]/div/ul/li[3]/a"));
+		Dodatniuredjaji.click();
+		Thread.sleep(3000);
+		
+		WebElement EON = webDriver.findElement(By.xpath("/html/body/div[3]/header/div[2]/div/div/nav/ul/li[2]/ul/li[2]/a"));
+		EON.click();
+		Thread.sleep(3000);
+		
+		WebElement Programskashema = webDriver.findElement(By.xpath("/html/body/div[3]/header/div[2]/div/div/nav/ul/li[2]/ul/li[3]/a"));
+		Programskashema.click();
+		Thread.sleep(3000);
+		
+		WebElement Videoklub = webDriver.findElement(By.xpath("/html/body/div[3]/header/div[2]/div/div/nav/ul/li[2]/ul/li[4]/a"));
+		Videoklub.click();
+		Thread.sleep(3000);
+		
+		WebElement uredjaji = webDriver.findElement(By.xpath("/html/body/div[3]/header/div[2]/div/div/nav/ul/li[2]/ul/li[5]/a"));
+		uredjaji.click();
+		Thread.sleep(3000);
+		
+		JavascriptExecutor scroll2 = (JavascriptExecutor) webDriver;
+		scroll2.executeScript("window.scrollBy(0,600)", "");
+		Thread.sleep(3000);
+		
+		WebElement smartTV = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[2]/div[1]/div/ul/li[2]/a"));
+		smartTV.click();
+		Thread.sleep(3000);
+		
+		WebElement tablet_mobilni = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[2]/div[1]/div/ul/li[3]/a"));
+		tablet_mobilni.click();
+		Thread.sleep(3000);
+		
+		WebElement pc_mac = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[2]/div[1]/div/ul/li[4]/a"));
+		pc_mac.click();
+		Thread.sleep(3000);
+		
+		WebElement streaming_uredjaji = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[2]/div[1]/div/ul/li[5]/a"));
+		streaming_uredjaji.click();
+		Thread.sleep(3000);
+		
+		WebElement personalizacija = webDriver.findElement(By.xpath("/html/body/div[3]/header/div[2]/div/div/nav/ul/li[2]/ul/li[6]/a"));
+		personalizacija.click();
+		Thread.sleep(3000);
+		
+		WebElement EONKids = webDriver.findElement(By.xpath("/html/body/div[3]/header/div[2]/div/div/nav/ul/li[2]/ul/li[7]/a"));
+		EONKids.click();
+		Thread.sleep(3000);
+		
+		JavascriptExecutor scroll3 = (JavascriptExecutor) webDriver;
+		scroll3.executeScript("window.scrollBy(0,5000)", "");
+		Thread.sleep(3000);
+		
+		WebElement EONKidsPitanje = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[10]/div/section/div/div[1]/div[1]/h4/a"));
+		EONKidsPitanje.click();
+		Thread.sleep(3000);
+		
+		WebElement EONKidsPitanje1 = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[10]/div/section/div/div[1]/div[1]/h4/a/span"));
+		EONKidsPitanje1.click();
+		Thread.sleep(3000);
+		
+		WebElement EONKidsPitanje2 = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[10]/div/section/div/div[2]/div[1]/h4/a"));
+		EONKidsPitanje2.click();
+		Thread.sleep(3000);
+		
+		WebElement EONKidsPitanje22 = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[10]/div/section/div/div[2]/div[1]/h4/a/span"));
+		EONKidsPitanje22.click();
+		Thread.sleep(3000);
+		
+		WebElement EONKidsPitanje3 = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[10]/div/section/div/div[3]/div[1]/h4/a"));
+		EONKidsPitanje3.click();
+		Thread.sleep(3000); 
+		
+		WebElement EONKidsPitanje33 = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[10]/div/section/div/div[3]/div[1]/h4/a/span"));
+		EONKidsPitanje33.click();
+		Thread.sleep(3000);
+		
+		WebElement EONKidsPitanje4 = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[10]/div/section/div/div[4]/div[1]/h4/a"));
+		EONKidsPitanje4.click();
+		Thread.sleep(3000);
+		
+		WebElement EONKidsPitanje44 = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[10]/div/section/div/div[4]/div[1]/h4/a/span"));
+		EONKidsPitanje44.click();
+		Thread.sleep(3000);
+		
+		JavascriptExecutor scroll4 = (JavascriptExecutor) webDriver;
+		scroll4.executeScript("window.scrollBy(0,200)", "");
+		Thread.sleep(3000);
+		
+		WebElement EONKidsPitanje5 = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[10]/div/section/div/div[5]/div[1]/h4/a"));
+		EONKidsPitanje5.click();
+		Thread.sleep(3000);
+		
+		WebElement EONKidsPitanje55 = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[10]/div/section/div/div[5]/div[1]/h4/a/span"));
+		EONKidsPitanje55.click();
+		Thread.sleep(3000);
+}
 }
