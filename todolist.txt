@@ -1,0 +1,12 @@
+1. Poboljsati podrskaTest() (mozda poslije svakog otvaranja od sljedecih opcija 
+(Televizija,Internet, Telefonija, Prikljucenje) da se otvori po jedno cesto pitanje
+(Opcija pretrazivanja se moze i skloniti s obzirom da ista radi samo kada se pritisne enter,a ne search
+ikona)
+
+2. Opcija Poslovni (napisati neki test ili vise testova)
+
+3. Ukoliko se moze ukombinovati testirati TotalTV i TV vodic
+
+4. Na dnu glavne stranice postoje stvari koje se mogu testirati
+
+5. Prijedlozi dodavanja ili izmjene (poboljsanja) postojecih testova
