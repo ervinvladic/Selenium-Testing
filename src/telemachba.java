@@ -39,6 +39,9 @@ class telemachba {
 		
 	}
 	
+	
+	/* Testing the EON package ordering option. 
+	 * Filling out the order form and testing button functionality   */
 	@Test
 	void naruciEonPaket() throws InterruptedException {
 		webDriver.get(baseUrl);
@@ -94,17 +97,24 @@ class telemachba {
 		
 		
 	}
+	
+	/* Testing "Poslovnice". 
+	 * Opening the drop-down menu, selecting the city Visoko, options for customer centers, 
+	 * the company headquarters, and filling out the form for contacting the company.   
+	 * */
 	@Test
 	void vidiPoslovnice() throws InterruptedException {
 		webDriver.get(baseUrl);
 		webDriver.manage().window().maximize();
-		
 		Thread.sleep(5000);
 		
 		WebElement EONPaketiButton = webDriver.findElement(By.cssSelector("#siteHeader > div.container > div > div > nav > ul > li:nth-child(1) > a"));
 		EONPaketiButton.click();
-		
 		Thread.sleep(5000);
+		
+		JavascriptExecutor scroll = (JavascriptExecutor) webDriver;
+		scroll.executeScript("window.scrollBy(0,4000)", "");
+		Thread.sleep(3000);
 		
 		WebElement poslovnice=webDriver.findElement(By.cssSelector("body > div.page-wrap > section:nth-child(13) > div > div > div:nth-child(2) > div > div.info > p > a"));
 		poslovnice.click();
@@ -117,7 +127,6 @@ class telemachba {
 		WebElement VisokoGrad=webDriver.findElement(By.cssSelector("#map-app > div > div.container.top-wrapper > div.dropdown-wrapper > div > ul > li:nth-child(5) > a"));
 		VisokoGrad.click();
 		Thread.sleep(6000);
-		
 		
 		WebElement vidiKorisnickeCentre=webDriver.findElement(By.cssSelector("#content > section.c-support-category-submenu.js-support-category-submenu.js-height-support-category-submenu.theme-bg.first-page-element > div > div > div.row.submenu-secondary-wrapper > div.col-md-7.menu-list-wrapper > ul > li:nth-child(2) > a > span > span"));
 		vidiKorisnickeCentre.click();
@@ -134,9 +143,6 @@ class telemachba {
 		WebElement posaljite=webDriver.findElement(By.cssSelector("#sbbContactFormSendBtn"));
 		posaljite.click();
 		Thread.sleep(5000);
-		
-		
-		
 		
 		WebElement ImeiPrezime = webDriver.findElement(By.cssSelector("#contact-form-general > div:nth-child(3) > div > input"));
 		ImeiPrezime.sendKeys("Test Tester");
@@ -174,13 +180,10 @@ class telemachba {
 		Poruka.sendKeys("Ovo je testna poruka");
 		Thread.sleep(3000);
 		
-		
-		
-		
-		
-		
-
 }
+	/* Putting the "O Nama" option to the test, 
+	 * analyzing the options within, and learning more about management personnel
+	 * */
 	@Test
 	void oNamaTest() throws InterruptedException {
 		webDriver.get(baseUrl);
@@ -203,27 +206,50 @@ class telemachba {
 		menadzmentButton.click();
 		Thread.sleep(5000);
 		
+		JavascriptExecutor scroll = (JavascriptExecutor) webDriver;
+		scroll.executeScript("window.scrollBy(0,600)", "");
+		Thread.sleep(3000);
+		
 		WebElement procitajteVise = webDriver.findElement(By.cssSelector("#content > section.banner-about-us.about-us-margin-bottom > div > div:nth-child(1) > div.col-md-6.desc > a"));
 		procitajteVise.click();
 		Thread.sleep(5000);
+		
+		JavascriptExecutor scroll1 = (JavascriptExecutor) webDriver;
+		scroll1.executeScript("window.scrollBy(0,100)", "");
+		Thread.sleep(3000);
 		
 		WebElement HajdiMostic = webDriver.findElement(By.cssSelector("#content > section.container.story-page-wrapper > div > div.sidebar > ul > li:nth-child(1) > a > label"));
 		HajdiMostic.click();
 		Thread.sleep(5000);
 		
+		JavascriptExecutor scroll2 = (JavascriptExecutor) webDriver;
+		scroll2.executeScript("window.scrollBy(0,100)", "");
+		Thread.sleep(3000);
+		
 		WebElement SevalBecirevic = webDriver.findElement(By.cssSelector("#content > section.container.story-page-wrapper > div > div.sidebar > ul > li:nth-child(2) > a > label"));
 		SevalBecirevic.click();
 		Thread.sleep(5000);
 		
-		
-		
+		JavascriptExecutor scroll3 = (JavascriptExecutor) webDriver;
+		scroll3.executeScript("window.scrollBy(0,100)", "");
+		Thread.sleep(3000);
+				
 }
+	
+	/* Testing the public directory of telephone numbers. There are two public directories: 
+	 * private and business. Initial testing of business directory populating and searching 
+	 * was followed by private directory populating and searching.
+	 * */
 	@Test
 	void telefonijaTest() throws InterruptedException {
 		
 		webDriver.get(baseUrl);
 		webDriver.manage().window().maximize();
 		Thread.sleep(5000);
+		
+		JavascriptExecutor scroll = (JavascriptExecutor) webDriver;
+		scroll.executeScript("window.scrollBy(0,1500)", "");
+		Thread.sleep(3000);
 		
 		WebElement javniImenik = webDriver.findElement(By.cssSelector("#ft-navigation > li:nth-child(4) > ul > li > a"));
 		javniImenik.click();
@@ -244,7 +270,6 @@ class telemachba {
 		WebElement kiseljakMjesto = webDriver.findElement(By.cssSelector("#phonebook-app > div > form > div > div:nth-child(2) > div > ul > li:nth-child(15)"));
 		kiseljakMjesto.click();
 		Thread.sleep(5000);
-		
 		
 		WebElement ulicaPravnogLica = webDriver.findElement(By.cssSelector("#phonebook-app > div > form > div > div:nth-child(3) > input"));
 		ulicaPravnogLica.sendKeys("Testna Ulica");
@@ -293,6 +318,8 @@ class telemachba {
 		
 	}
 	
+	/* Testing the "Podrska" option and all options within it also testing the search option.
+	 * */
 	@Test
 	void podrskaTest() throws InterruptedException {
 		webDriver.get(baseUrl);
@@ -311,7 +338,6 @@ class telemachba {
 		glavniSearchButton.click();
 		Thread.sleep(5000);
 		
-		
 		WebElement televizijaButton = webDriver.findElement(By.cssSelector("#google-search-app > div > div > div.row.submenu-secondary-wrapper > div.col-md-7.menu-list-wrapper > ul > li:nth-child(1) > a"));
 		televizijaButton.click();
 		Thread.sleep(5000);
@@ -324,7 +350,6 @@ class telemachba {
 		searchTelevizijaButton.click();
 		Thread.sleep(5000);
 		
-		
 		WebElement internetButton = webDriver.findElement(By.cssSelector("#content > section.c-support-category-submenu.js-support-category-submenu.js-height-support-category-submenu.theme-bg.without-small-title.first-page-element > div > div > div.row.submenu-secondary-wrapper > div.col-md-7.menu-list-wrapper > ul > li:nth-child(2) > a"));
 		internetButton.click();
 		Thread.sleep(5000);
@@ -336,7 +361,6 @@ class telemachba {
 		WebElement searchInternetButton = webDriver.findElement(By.cssSelector("#google-search-app > div.js-google-custom-search-form.p-google-custom-search-form.clearfix > div > span"));
 		searchInternetButton.click();
 		Thread.sleep(5000);
-		
 		
 		WebElement telefonijaButton = webDriver.findElement(By.cssSelector("#content > section.c-support-category-submenu.js-support-category-submenu.js-height-support-category-submenu.theme-bg.without-small-title.first-page-element > div > div > div.row.submenu-secondary-wrapper > div.col-md-7.menu-list-wrapper > ul > li:nth-child(3) > a"));
 		telefonijaButton.click();
@@ -363,12 +387,13 @@ class telemachba {
 		Thread.sleep(5000);
 		
 		
-		
-		
 	}
-	
+	/* Testing the "Aplikacije" and "My Telemach" options within the application, 
+	 * there is an option to test the button and switch to "My Telemach." 
+	 * After that, test logging in and registering into My Telemach.
+	 * */
 	@Test
-	void mojTelemachTest() throws InterruptedException {
+	void aplikacijeImojTelemachTest() throws InterruptedException {
 		webDriver.get(baseUrl);
 		webDriver.manage().window().maximize();
 		Thread.sleep(3000);
@@ -437,9 +462,52 @@ class telemachba {
 		ulogujSe.click();
 		Thread.sleep(3000);
 		
+		WebElement registracijaButton = webDriver.findElement(By.xpath("/html/body/app-root/app-login/div/div/div/div[2]/div/div/a"));
+		registracijaButton.click();
+		Thread.sleep(3000);
+		
+		WebElement IDKorisnika = webDriver.findElement(By.xpath("/html/body/app-root/app-registration/div/div/div/div[2]/div/form/div[1]/div[1]/mat-form-field[1]/div/div[1]/div/input"));
+		IDKorisnika.sendKeys("333333");
+		Thread.sleep(3000);
+		
+		WebElement brojUgovora = webDriver.findElement(By.xpath("/html/body/app-root/app-registration/div/div/div/div[2]/div/form/div[1]/div[1]/mat-form-field[2]/div/div[1]/div/input"));
+		brojUgovora.sendKeys("e2345");
+		Thread.sleep(3000);
+		
+		WebElement email = webDriver.findElement(By.xpath("/html/body/app-root/app-registration/div/div/div/div[2]/div/form/div[1]/div[2]/mat-form-field/div/div[1]/div/input"));
+		email.sendKeys("test.tester@gmail.com");
+		Thread.sleep(3000);
+		
+		WebElement lozinka1 = webDriver.findElement(By.xpath("/html/body/app-root/app-registration/div/div/div/div[2]/div/form/div[2]/mat-form-field[1]/div/div[1]/div/input"));
+		lozinka1.sendKeys("test123");
+		Thread.sleep(3000);
+		
+		WebElement opetlozinka = webDriver.findElement(By.xpath("/html/body/app-root/app-registration/div/div/div/div[2]/div/form/div[2]/mat-form-field[2]/div/div[1]/div/input"));
+		opetlozinka.sendKeys("test123");
+		Thread.sleep(3000);
+		
+		WebElement checkBox = webDriver.findElement(By.xpath("/html/body/app-root/app-registration/div/div/div/div[2]/div/form/div[2]/mat-checkbox/label/div"));
+		checkBox.click();
+		Thread.sleep(3000);
+		
+		WebElement checkBox1 = webDriver.findElement(By.xpath("/html/body/app-root/app-registration/div/div/div/div[2]/div/form/div[2]/mat-checkbox/label/div"));
+		checkBox1.click();
+		Thread.sleep(3000);
+		
+		WebElement registracijaButton1 = webDriver.findElement(By.xpath("/html/body/app-root/app-registration/div/div/div/div[2]/div/form/div[3]/button"));
+		registracijaButton1.click();
+		Thread.sleep(3000);
+		
+		
+		
+		
+		
+		
 		
 	}
-	
+	/* Testing the program scheme, all drop-down menus, search options, 
+	 * and buttons within the scheme
+	 * */
 	@Test
 	void programskaShemaTest() throws InterruptedException {
 		webDriver.get(baseUrl);
@@ -469,7 +537,6 @@ class telemachba {
 		WebElement search = webDriver.findElement(By.xpath("/html/body/div[3]/main/div/form/section/div[2]/div[2]/div[1]/div/div/div/div/div[2]/input"));
 		search.sendKeys("discovery");
 		Thread.sleep(3000);
-		
 		
 		WebElement startPaket = webDriver.findElement(By.xpath("/html/body/div[3]/main/div/form/section/div[2]/div[1]/div/ul/li[2]/a"));
 		startPaket.click();
@@ -507,6 +574,8 @@ class telemachba {
 		CinestarPremiere.click();
 		Thread.sleep(3000);
 }
+	/* Testing the EONTV option, drop-down menu buttons, and all options within EONTV
+	 * */
 	@Test
 	void EONTVTest() throws InterruptedException {
 		webDriver.get(baseUrl);
@@ -516,7 +585,6 @@ class telemachba {
 		WebElement EONTVButton = webDriver.findElement(By.xpath("/html/body/div[3]/header/div[2]/div/div/nav/ul/li[2]/a"));
 		EONTVButton.click();
 		Thread.sleep(3000);
-		
 	
 		JavascriptExecutor scroll = (JavascriptExecutor) webDriver;
 		scroll.executeScript("window.scrollBy(0,1800)", "");
@@ -622,4 +690,6 @@ class telemachba {
 		EONKidsPitanje55.click();
 		Thread.sleep(3000);
 }
+	
 }
+
