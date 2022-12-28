@@ -27,7 +27,7 @@ class telemachba {
 
 	@BeforeEach
 	void setUp() throws Exception {
-		System.setProperty("webdriver.chrome.driver","C:/Users/Ervin/eclipse-workspace/.metadata/Selenium Testing - telemach.ba/code/chromedriver/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver","C:/Users/Ervin/eclipse-workspace/.metadata/Selenium-Testing/code/chromedriver/chromedriver.exe");
 		webDriver= new ChromeDriver();
 		baseUrl="https://telemach.ba/";
 		
@@ -82,19 +82,41 @@ class telemachba {
 		scroll2.executeScript("window.scrollBy(0,300)", "");
 		Thread.sleep(5000);
 		
+		String handle1 = webDriver.getWindowHandle();
+		
+		webDriver.findElement(By.cssSelector("#content > section > div > div.package-container > div.form-wrapper > form > div:nth-child(5) > label > a")).click();
+		
+		for(String handle: webDriver.getWindowHandles()) {
+			if (!handle.equals(handle1)) {
+				webDriver.switchTo().window(handle);
+				break;
+			}
+		}
+		
+		Thread.sleep(3000);
+		webDriver.switchTo().window(handle1);
+		Thread.sleep(3000);
+
 		WebElement saglasnost1=webDriver.findElement(By.cssSelector("#content > section > div > div.package-container > div.form-wrapper > form > div:nth-child(5) > label > span"));
 		saglasnost1.click();
 		Thread.sleep(3000);
 		
+		String handle2 = webDriver.getWindowHandle();
+		webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section/div/div[1]/div[3]/form/div[7]/p/a")).click();
+		
+		for(String handle3: webDriver.getWindowHandles()) {
+			if (!handle3.equals(handle2)) {
+				webDriver.switchTo().window(handle3);
+				break;
+			}
+		}
+		Thread.sleep(3000);
+		webDriver.switchTo().window(handle2);
+		Thread.sleep(3000);
 		
 		WebElement saglasnost2=webDriver.findElement(By.cssSelector("#content > section > div > div.package-container > div.form-wrapper > form > div:nth-child(6) > label > span"));
 		saglasnost2.click();
 		Thread.sleep(3000);
-		
-		WebElement procitajSaglasnost=webDriver.findElement(By.cssSelector("#content > section > div > div.package-container > div.form-wrapper > form > div:nth-child(5) > label > a"));
-		procitajSaglasnost.click();
-		Thread.sleep(3000);
-		
 		
 	}
 	
@@ -497,11 +519,6 @@ class telemachba {
 		WebElement registracijaButton1 = webDriver.findElement(By.xpath("/html/body/app-root/app-registration/div/div/div/div[2]/div/form/div[3]/button"));
 		registracijaButton1.click();
 		Thread.sleep(3000);
-		
-		
-		
-		
-		
 		
 		
 	}
