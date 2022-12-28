@@ -1,3 +1,27 @@
+To do list:
+--------------------------------------------------
+			DONE
+--------------------------------------------------
+1. programskaShemaTest() - ✓ 
+2. telefonijaTest() - ✓ 
+3. naruciEonPaket() -  ✓ 
+4. vidiPoslovnice() -  ✓ 
+5. aplikacijeMojTelemach() - ✓ 
+6. menuTest() -  ✓ 
+---------------------------------------------------
+			DOING
+---------------------------------------------------
+7. oNamaTest() -  ✘ (moze se unaprijediti)
+8. EONTVTest() -  ✘ (moze biti podijeljen u dva dijela (veliki test))
+9. podrskaTest() -  ✘ (popraviti i unaprijediti)
+---------------------------------------------------
+			TO DO
+---------------------------------------------------
+10. poslovniTest1 () - ✘ ------> (Poslovni-> Telemach Cloud-> Web Hosting-> CPanel Superior-> Narucite-> Dalje po izboru)
+11. poslovniTest2 () - ✘ ------> (Poslovni-> Paketi-> Biznis Paketi-> Biznis 3-> Narucite-> Popuni podatke -> Posaljite)
+12. EONTotalTvTvVodic() -✘ ------> (Glavna stranica-> EON dugme -> Povratak na glavnu stranicu-> TotalTV-> Povratak na glavnu stranicu->TV Vodic->Povratak na glavnu stranicu)
+---------------------------------------------------
+
 1. Poboljsati podrskaTest() (mozda poslije svakog otvaranja od sljedecih opcija 
 (Televizija,Internet, Telefonija, Prikljucenje) da se otvori po jedno cesto pitanje
 (Opcija pretrazivanja se moze i skloniti s obzirom da ista radi samo kada se pritisne enter,a ne search
@@ -10,15 +34,3 @@ ikona)
 4. Na dnu glavne stranice postoje stvari koje se mogu testirati
 
 5. Prijedlozi dodavanja ili izmjene (poboljsanja) postojecih testova
-
-6. Testovi: 
-
-1. programskaShemaTest() - ✓ 
-2. oNamaTest() -  ✘ (moze se unaprijediti)
-3. telefonijaTest() - ✓ 
-4. naruciEonPaket() -  ✓ 
-5. vidiPoslovnice() -  ✓ 
-6. EONTVTest() -  ✘ (moze biti podijeljen u dva dijela (veliki test))
-7. podrskaTest() -  ✘ (popraviti i unaprijediti)
-8. aplikacijeMojTelemach() - ✓ 
-9. menuTest() -  ✓ 
