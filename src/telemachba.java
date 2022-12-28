@@ -707,6 +707,84 @@ class telemachba {
 		EONKidsPitanje55.click();
 		Thread.sleep(3000);
 }
+	/* 
+	 * Testing menu options, wifi mesh, and frequently asked questions within wifi mesh */
+	@Test
+	void menuTest() throws InterruptedException {
+		webDriver.get(baseUrl);
+		webDriver.manage().window().maximize();
+		Thread.sleep(3000);
+		
+		JavascriptExecutor scroll = (JavascriptExecutor) webDriver;
+		scroll.executeScript("window.scrollBy(0,400)", "");
+		Thread.sleep(3000);
+		
+		WebElement menuButton = webDriver.findElement(By.xpath("/html/body/div[3]/header/div[2]/div/div/button[2]"));
+		menuButton.click();
+		Thread.sleep(3000);
+		
+		WebElement wifiMesh = webDriver.findElement(By.xpath("/html/body/div[3]/header/section/nav/ul/li[1]/ul/li[1]/ul/li[4]/a"));
+		wifiMesh.click();
+		Thread.sleep(3000);
+		
+		JavascriptExecutor scroll2 = (JavascriptExecutor) webDriver;
+		scroll2.executeScript("window.scrollBy(0,3200)", "");
+		Thread.sleep(3000);
+		
+		WebElement pitanje1 = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[9]/div/section/div/div[1]/div[1]/h4/a"));
+		pitanje1.click();
+		Thread.sleep(3000);
+		
+		WebElement pitanje11 = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[9]/div/section/div/div[1]/div[1]/h4/a"));
+		pitanje11.click();
+		Thread.sleep(3000);
+		
+		WebElement pitanje2 = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[9]/div/section/div/div[2]/div[1]/h4/a/span"));
+		pitanje2.click();
+		Thread.sleep(3000);
+		
+		WebElement pitanje22 = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[9]/div/section/div/div[2]/div[1]/h4/a/span"));
+		pitanje22.click();
+		Thread.sleep(3000);
+		
+		JavascriptExecutor scroll3 = (JavascriptExecutor) webDriver;
+		scroll3.executeScript("window.scrollBy(0,300)", "");
+		Thread.sleep(3000);
+		
+		
+		WebElement pitanje3 = webDriver.findElement(By.xpath("//html/body/div[3]/div[2]/main/section[9]/div/section/div/div[3]/div[1]/h4/a/span"));
+		pitanje3.click();
+		Thread.sleep(3000);
+		
+		WebElement pitanje33 = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[9]/div/section/div/div[3]/div[1]/h4/a/span"));
+		pitanje33.click();
+		Thread.sleep(3000);
+		
+		WebElement pitanje4 = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[9]/div/section/div/div[4]/div[1]/h4/a/span"));
+		pitanje4.click();
+		Thread.sleep(3000);
+		
+		WebElement pitanje44 = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[9]/div/section/div/div[4]/div[1]/h4/a/span"));
+		pitanje44.click();
+		Thread.sleep(3000);
+		
+		WebElement pitanje5 = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[9]/div/section/div/div[5]/div[1]/h4/a/span"));
+		pitanje5.click();
+		Thread.sleep(3000);
+		
+		WebElement pitanje55 = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[9]/div/section/div/div[5]/div[1]/h4/a"));
+		pitanje55.click();
+		Thread.sleep(3000);
+		
+		WebElement pitanje6 = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[9]/div/section/div/div[6]/div[1]/h4/a/span"));
+		pitanje6.click();
+		Thread.sleep(3000);
+		
+		WebElement pitanje66 = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[9]/div/section/div/div[6]/div[1]/h4/a/span"));
+		pitanje66.click();
+		Thread.sleep(3000);
+		
+	}
 	
 }
 
