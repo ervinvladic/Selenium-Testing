@@ -118,6 +118,10 @@ class telemachba {
 		saglasnost2.click();
 		Thread.sleep(3000);
 		
+		WebElement naruciOnlineButton=webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section/div/div[1]/div[3]/form/div[4]/input"));
+		naruciOnlineButton.click();
+		Thread.sleep(3000);
+		
 	}
 	
 	/* Testing "Poslovnice". 
@@ -128,19 +132,12 @@ class telemachba {
 	void vidiPoslovnice() throws InterruptedException {
 		webDriver.get(baseUrl);
 		webDriver.manage().window().maximize();
-		Thread.sleep(5000);
-		
-		WebElement EONPaketiButton = webDriver.findElement(By.cssSelector("#siteHeader > div.container > div > div > nav > ul > li:nth-child(1) > a"));
-		EONPaketiButton.click();
-		Thread.sleep(5000);
-		
-		JavascriptExecutor scroll = (JavascriptExecutor) webDriver;
-		scroll.executeScript("window.scrollBy(0,4000)", "");
 		Thread.sleep(3000);
 		
-		WebElement poslovnice=webDriver.findElement(By.cssSelector("body > div.page-wrap > section:nth-child(13) > div > div > div:nth-child(2) > div > div.info > p > a"));
-		poslovnice.click();
+		WebElement najblizaPoslovnica = webDriver.findElement(By.xpath("/html/body/div[3]/header/div[1]/div/nav/ul[2]/li[1]/a/span"));
+		najblizaPoslovnica.click();
 		Thread.sleep(3000);
+		
 		
 		WebElement izaberiGrad=webDriver.findElement(By.cssSelector("#map-app > div > div.container.top-wrapper > div.dropdown-wrapper > div > button"));
 		izaberiGrad.click();
@@ -148,23 +145,39 @@ class telemachba {
 		
 		WebElement VisokoGrad=webDriver.findElement(By.cssSelector("#map-app > div > div.container.top-wrapper > div.dropdown-wrapper > div > ul > li:nth-child(5) > a"));
 		VisokoGrad.click();
-		Thread.sleep(6000);
+		Thread.sleep(3000);
 		
 		WebElement vidiKorisnickeCentre=webDriver.findElement(By.cssSelector("#content > section.c-support-category-submenu.js-support-category-submenu.js-height-support-category-submenu.theme-bg.first-page-element > div > div > div.row.submenu-secondary-wrapper > div.col-md-7.menu-list-wrapper > ul > li:nth-child(2) > a > span > span"));
 		vidiKorisnickeCentre.click();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
+		
+		WebElement izaberiGrad1=webDriver.findElement(By.xpath("/html/body/div[3]/main/div/div/div/div/div[1]/div[3]/div/button"));
+		izaberiGrad1.click();
+		Thread.sleep(3000);
+		
+		WebElement TravnikGrad=webDriver.findElement(By.xpath("/html/body/div[3]/main/div/div/div/div/div[1]/div[3]/div/ul/li[3]/a"));
+		TravnikGrad.click();
+		Thread.sleep(3000);
 		
 		WebElement sjedisteKompanije=webDriver.findElement(By.cssSelector("#content > section.c-support-category-submenu.js-support-category-submenu.js-height-support-category-submenu.theme-bg.first-page-element > div > div > div.row.submenu-secondary-wrapper > div.col-md-7.menu-list-wrapper > ul > li:nth-child(4) > a"));
 		sjedisteKompanije.click();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		
 		WebElement kontaktirajteNas=webDriver.findElement(By.cssSelector("#content > section.c-support-category-submenu.js-support-category-submenu.js-height-support-category-submenu.theme-bg.first-page-element > div > div > div.row.submenu-secondary-wrapper > div.col-md-7.menu-list-wrapper > ul > li:nth-child(3) > a"));
 		kontaktirajteNas.click();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
+		
+		JavascriptExecutor scroll = (JavascriptExecutor) webDriver;
+		scroll.executeScript("window.scrollBy(0,600)", "");
+		Thread.sleep(3000);
 		
 		WebElement posaljite=webDriver.findElement(By.cssSelector("#sbbContactFormSendBtn"));
 		posaljite.click();
 		Thread.sleep(5000);
+		
+		JavascriptExecutor scroll2 = (JavascriptExecutor) webDriver;
+		scroll2.executeScript("window.scrollBy(0,-600)", "");
+		Thread.sleep(3000);
 		
 		WebElement ImeiPrezime = webDriver.findElement(By.cssSelector("#contact-form-general > div:nth-child(3) > div > input"));
 		ImeiPrezime.sendKeys("Test Tester");
@@ -186,21 +199,35 @@ class telemachba {
 		Postanskibroj.sendKeys("Testni Postanski Broj");
 		Thread.sleep(3000);
 		
+		JavascriptExecutor scroll3 = (JavascriptExecutor) webDriver;
+		scroll3.executeScript("window.scrollBy(0,200)", "");
+		Thread.sleep(3000);
+		
 		WebElement Grad = webDriver.findElement(By.cssSelector("#contact-form-general > div:nth-child(6) > div:nth-child(1) > input"));
 		Grad.sendKeys("Testni grad");
 		Thread.sleep(3000);
 		
-		WebElement PitanjeSeOdnosiOtvori = webDriver.findElement(By.cssSelector("#contact-form-general > div:nth-child(6) > div:nth-child(2) > div > div > input"));
+		WebElement PitanjeSeOdnosiOtvori = webDriver.findElement(By.xpath("/html/body/div[3]/main/div/div/div[1]/div/form/div[4]/div[2]/div/div/input"));
 		PitanjeSeOdnosiOtvori.click();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		
-		WebElement PrimjedbeiSugestije = webDriver.findElement(By.cssSelector("#contact-form-general > div:nth-child(6) > div:nth-child(2) > div > ul > li:nth-child(3)"));
+		WebElement PrimjedbeiSugestije = webDriver.findElement(By.xpath("/html/body/div[3]/main/div/div/div[1]/div/form/div[4]/div[2]/div/ul/li[3]"));
 		PrimjedbeiSugestije.click();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		
 		WebElement Poruka = webDriver.findElement(By.cssSelector("#contact-form-general > div:nth-child(7) > div > textarea"));
 		Poruka.sendKeys("Ovo je testna poruka");
 		Thread.sleep(3000);
+		
+		JavascriptExecutor scroll4 = (JavascriptExecutor) webDriver;
+		scroll4.executeScript("window.scrollBy(0,400)", "");
+		Thread.sleep(3000);
+		
+		WebElement posaljite2=webDriver.findElement(By.cssSelector("#sbbContactFormSendBtn"));
+		posaljite2.click();
+		Thread.sleep(3000);
+		
+		
 		
 }
 	/* Putting the "O Nama" option to the test, 
@@ -210,19 +237,19 @@ class telemachba {
 	void oNamaTest() throws InterruptedException {
 		webDriver.get(baseUrl);
 		webDriver.manage().window().maximize();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		
 		WebElement ONamaButton = webDriver.findElement(By.cssSelector("#siteHeader > div.header-top.hidden-md-down > div > nav > ul.hd-nav-container.top-left-nav > li:nth-child(4) > a"));
 		ONamaButton.click();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		
 		WebElement GodinasaVamaButton = webDriver.findElement(By.cssSelector("#siteHeader > div.container > div > div > nav > ul > li:nth-child(1) > a"));
 		GodinasaVamaButton.click();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		
 		WebElement ZaposlenjeButton = webDriver.findElement(By.cssSelector("#siteHeader > div.container > div > div > nav > ul > li:nth-child(3) > a:nth-child(2)"));
 		ZaposlenjeButton.click();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		
 		WebElement menadzmentButton = webDriver.findElement(By.cssSelector("#siteHeader > div.container > div > div > nav > ul > li:nth-child(3) > a:nth-child(1)"));
 		menadzmentButton.click();
@@ -234,7 +261,7 @@ class telemachba {
 		
 		WebElement procitajteVise = webDriver.findElement(By.cssSelector("#content > section.banner-about-us.about-us-margin-bottom > div > div:nth-child(1) > div.col-md-6.desc > a"));
 		procitajteVise.click();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		
 		JavascriptExecutor scroll1 = (JavascriptExecutor) webDriver;
 		scroll1.executeScript("window.scrollBy(0,100)", "");
@@ -242,7 +269,7 @@ class telemachba {
 		
 		WebElement HajdiMostic = webDriver.findElement(By.cssSelector("#content > section.container.story-page-wrapper > div > div.sidebar > ul > li:nth-child(1) > a > label"));
 		HajdiMostic.click();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		
 		JavascriptExecutor scroll2 = (JavascriptExecutor) webDriver;
 		scroll2.executeScript("window.scrollBy(0,100)", "");
@@ -250,7 +277,7 @@ class telemachba {
 		
 		WebElement SevalBecirevic = webDriver.findElement(By.cssSelector("#content > section.container.story-page-wrapper > div > div.sidebar > ul > li:nth-child(2) > a > label"));
 		SevalBecirevic.click();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		
 		JavascriptExecutor scroll3 = (JavascriptExecutor) webDriver;
 		scroll3.executeScript("window.scrollBy(0,100)", "");
@@ -275,11 +302,15 @@ class telemachba {
 		
 		WebElement javniImenik = webDriver.findElement(By.cssSelector("#ft-navigation > li:nth-child(4) > ul > li > a"));
 		javniImenik.click();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
+		
+		JavascriptExecutor scroll2 = (JavascriptExecutor) webDriver;
+		scroll2.executeScript("window.scrollBy(0,500)", "");
+		Thread.sleep(3000);
 		
 		WebElement poslovniButton = webDriver.findElement(By.cssSelector("#myTab > li:nth-child(2) > a"));
 		poslovniButton.click();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		
 		WebElement nazivPravnogLica = webDriver.findElement(By.cssSelector("#phonebook-app > div > form > div > div:nth-child(1) > input"));
 		nazivPravnogLica.sendKeys("Test Tester");
@@ -287,11 +318,11 @@ class telemachba {
 		
 		WebElement paddingMenuMjesto = webDriver.findElement(By.cssSelector("#phonebook-app > div > form > div > div:nth-child(2) > div > div > input"));
 		paddingMenuMjesto.click();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		
 		WebElement kiseljakMjesto = webDriver.findElement(By.cssSelector("#phonebook-app > div > form > div > div:nth-child(2) > div > ul > li:nth-child(15)"));
 		kiseljakMjesto.click();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		
 		WebElement ulicaPravnogLica = webDriver.findElement(By.cssSelector("#phonebook-app > div > form > div > div:nth-child(3) > input"));
 		ulicaPravnogLica.sendKeys("Testna Ulica");
@@ -303,12 +334,11 @@ class telemachba {
 		
 		WebElement traziteButtonPravni = webDriver.findElement(By.cssSelector("#phonebook-app > div > form > div > div.field-wrapper.col-xs-12.col-sm-6.col-lg-6.clearfix > button"));
 		traziteButtonPravni.click();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		
 		WebElement privatniButton = webDriver.findElement(By.cssSelector("#myTab > li:nth-child(1) > a"));
 		privatniButton.click();
-		Thread.sleep(5000);
-		
+		Thread.sleep(3000);
 		
 		WebElement Ime = webDriver.findElement(By.cssSelector("#phonebook-private-app > div > form > div > div:nth-child(1) > input"));
 		Ime.sendKeys("Test");
@@ -320,11 +350,11 @@ class telemachba {
 		
 		WebElement paddingMenuzaMjesto = webDriver.findElement(By.cssSelector("#phonebook-private-app > div > form > div > div:nth-child(3) > div > div > input"));
 		paddingMenuzaMjesto.click();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		
 		WebElement capljinaMjesto = webDriver.findElement(By.cssSelector("#phonebook-private-app > div > form > div > div:nth-child(3) > div > ul > li:nth-child(37)"));
 		capljinaMjesto.click();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		
 		WebElement Ulica = webDriver.findElement(By.cssSelector("#phonebook-private-app > div > form > div > div:nth-child(4) > input"));
 		Ulica.sendKeys("Testna Ulica");
@@ -336,7 +366,7 @@ class telemachba {
 		
 		WebElement traziteButton = webDriver.findElement(By.cssSelector("#phonebook-private-app > div > form > div > div.field-wrapper.col-xs-12.col-sm-offset-6.col-sm-6.col-lg-offset-0.col-lg-3.clearfix > button"));
 		traziteButton.click();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		
 	}
 	
@@ -370,6 +400,14 @@ class telemachba {
 		
 		WebElement searchTelevizijaButton = webDriver.findElement(By.cssSelector("#google-search-app > div.js-google-custom-search-form.p-google-custom-search-form.clearfix > div > span"));
 		searchTelevizijaButton.click();
+		Thread.sleep(5000);
+		
+		JavascriptExecutor scroll = (JavascriptExecutor) webDriver;
+		scroll.executeScript("window.scrollBy(0,500)", "");
+		Thread.sleep(3000);
+		
+		WebElement pitanjeTelevizija = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/div[1]/div/div[2]/div/div/section[1]/div[1]/div[2]/div[3]/a"));
+		pitanjeTelevizija.click();
 		Thread.sleep(5000);
 		
 		WebElement internetButton = webDriver.findElement(By.cssSelector("#content > section.c-support-category-submenu.js-support-category-submenu.js-height-support-category-submenu.theme-bg.without-small-title.first-page-element > div > div > div.row.submenu-secondary-wrapper > div.col-md-7.menu-list-wrapper > ul > li:nth-child(2) > a"));
@@ -553,6 +591,10 @@ class telemachba {
 		
 		WebElement search = webDriver.findElement(By.xpath("/html/body/div[3]/main/div/form/section/div[2]/div[2]/div[1]/div/div/div/div/div[2]/input"));
 		search.sendKeys("discovery");
+		Thread.sleep(3000);
+		
+		WebElement ponistiPretragu = webDriver.findElement(By.xpath("/html/body/div[3]/main/div/form/section/div[2]/div[2]/div[1]/div/div/div/button"));
+		ponistiPretragu.click();
 		Thread.sleep(3000);
 		
 		WebElement startPaket = webDriver.findElement(By.xpath("/html/body/div[3]/main/div/form/section/div[2]/div[1]/div/ul/li[2]/a"));
@@ -750,7 +792,6 @@ class telemachba {
 		JavascriptExecutor scroll3 = (JavascriptExecutor) webDriver;
 		scroll3.executeScript("window.scrollBy(0,300)", "");
 		Thread.sleep(3000);
-		
 		
 		WebElement pitanje3 = webDriver.findElement(By.xpath("//html/body/div[3]/div[2]/main/section[9]/div/section/div/div[3]/div[1]/h4/a/span"));
 		pitanje3.click();

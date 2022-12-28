@@ -5,11 +5,20 @@ ikona)
 
 2. Opcija Poslovni (napisati neki test ili vise testova)
 
-3. Prijedlozi dodavanja ili izmjene (poboljsanja) postojecih testova
+3. Ukoliko se moze ukombinovati testirati TotalTV i TV vodic
 
-4. Napisati test koji se tice drustvenih mreza (Na dnu glavne stranice postoje opcije za: 
-Facebook, Twitter, Instagram, LinkedIn, Youtube)
+4. Na dnu glavne stranice postoje stvari koje se mogu testirati
 
-5. Napisati test koji testira odlazak na druge stranice (Na glavnom pageu odlazak na EON, TotalTV, TV vodic
+5. Prijedlozi dodavanja ili izmjene (poboljsanja) postojecih testova
 
-6. EONTVTest je mozda prevelik (podijeliti ga u dva manja testa)
+6. Testovi: 
+
+1. programskaShemaTest() - ✓ 
+2. oNamaTest() -  ✘ (moze se unaprijediti)
+3. telefonijaTest() - ✓ 
+4. naruciEonPaket() -  ✓ 
+5. vidiPoslovnice() -  ✓ 
+6. EONTVTest() -  ✘ (moze biti podijeljen u dva dijela (veliki test))
+7. podrskaTest() -  ✘ (popraviti i unaprijediti)
+8. aplikacijeMojTelemach() - ✓ 
+9. menuTest() -  ✓ 
