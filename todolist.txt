@@ -11,3 +11,5 @@ ikona)
 Facebook, Twitter, Instagram, LinkedIn, Youtube)
 
 5. Napisati test koji testira odlazak na druge stranice (Na glavnom pageu odlazak na EON, TotalTV, TV vodic
+
+6. EONTVTest je mozda prevelik (podijeliti ga u dva manja testa)
