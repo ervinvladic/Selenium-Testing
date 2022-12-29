@@ -8,12 +8,12 @@ To do list:
 4. vidiPoslovnice() -  ✓ 
 5. aplikacijeMojTelemach() - ✓ 
 6. menuTest() -  ✓ 
+9. podrskaTest() - ✓
 ---------------------------------------------------
 			DOING
 ---------------------------------------------------
 7. oNamaTest() -  ✘ (moze se unaprijediti)
 8. EONTVTest() -  ✘ (moze biti podijeljen u dva dijela (veliki test))
-9. podrskaTest() -  ✘ (popraviti i unaprijediti)
 ---------------------------------------------------
 			TO DO
 ---------------------------------------------------
@@ -22,15 +22,10 @@ To do list:
 12. EONTotalTvTvVodic() -✘ ------> (Glavna stranica-> EON dugme -> Povratak na glavnu stranicu-> TotalTV-> Povratak na glavnu stranicu->TV Vodic->Povratak na glavnu stranicu)
 ---------------------------------------------------
 
-1. Poboljsati podrskaTest() (mozda poslije svakog otvaranja od sljedecih opcija 
-(Televizija,Internet, Telefonija, Prikljucenje) da se otvori po jedno cesto pitanje
-(Opcija pretrazivanja se moze i skloniti s obzirom da ista radi samo kada se pritisne enter,a ne search
-ikona)
+1. Opcija Poslovni (napisati neki test ili vise testova)
 
-2. Opcija Poslovni (napisati neki test ili vise testova)
+2. Ukoliko se moze ukombinovati testirati TotalTV i TV vodic
 
-3. Ukoliko se moze ukombinovati testirati TotalTV i TV vodic
+3. Na dnu glavne stranice postoje stvari koje se mogu testirati
 
-4. Na dnu glavne stranice postoje stvari koje se mogu testirati
-
-5. Prijedlozi dodavanja ili izmjene (poboljsanja) postojecih testova
+4. Prijedlozi dodavanja ili izmjene (poboljsanja) postojecih testova

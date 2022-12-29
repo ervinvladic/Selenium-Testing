@@ -376,75 +376,139 @@ class telemachba {
 	void podrskaTest() throws InterruptedException {
 		webDriver.get(baseUrl);
 		webDriver.manage().window().maximize();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		
-		WebElement podrskaButton = webDriver.findElement(By.cssSelector("#siteHeader > div.container > div > div > nav > ul > li:nth-child(5) > a"));
+		WebElement podrskaButton = webDriver.findElement(By.xpath("/html/body/div[3]/header/div[2]/div/div/nav/ul/li[5]/a"));
 		podrskaButton.click();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		
-		WebElement glavniSearch = webDriver.findElement(By.cssSelector("#google-search-app > div > div > div.js-google-custom-search-form.p-google-custom-search-form.clearfix > div > form > input"));
+		WebElement glavniSearch = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[1]/div/div/div[1]/div/form/input"));
 		glavniSearch.sendKeys("Test");
 		Thread.sleep(3000);
 		
-		WebElement glavniSearchButton = webDriver.findElement(By.cssSelector("#google-search-app > div > div > div.js-google-custom-search-form.p-google-custom-search-form.clearfix > div > span"));
-		glavniSearchButton.click();
-		Thread.sleep(5000);
-		
-		WebElement televizijaButton = webDriver.findElement(By.cssSelector("#google-search-app > div > div > div.row.submenu-secondary-wrapper > div.col-md-7.menu-list-wrapper > ul > li:nth-child(1) > a"));
+		WebElement televizijaButton = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[1]/div/div/div[2]/div[2]/ul/li[1]/a"));
 		televizijaButton.click();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		
-		WebElement searchTelevizija = webDriver.findElement(By.cssSelector("#google-search-app > div.js-google-custom-search-form.p-google-custom-search-form.clearfix > div > form > input"));
+		WebElement searchTelevizija = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/div[1]/div/div[1]/div/form/input"));
 		searchTelevizija.sendKeys("Test");
 		Thread.sleep(3000);
 		
-		WebElement searchTelevizijaButton = webDriver.findElement(By.cssSelector("#google-search-app > div.js-google-custom-search-form.p-google-custom-search-form.clearfix > div > span"));
-		searchTelevizijaButton.click();
-		Thread.sleep(5000);
-		
 		JavascriptExecutor scroll = (JavascriptExecutor) webDriver;
-		scroll.executeScript("window.scrollBy(0,500)", "");
+		scroll.executeScript("window.scrollBy(0,1000)", "");
 		Thread.sleep(3000);
 		
-		WebElement pitanjeTelevizija = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/div[1]/div/div[2]/div/div/section[1]/div[1]/div[2]/div[3]/a"));
-		pitanjeTelevizija.click();
-		Thread.sleep(5000);
+		WebElement d3digitalnatelevizija = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/div[2]/div[1]/div/ul/li[2]/a"));
+		d3digitalnatelevizija.click();
+		Thread.sleep(3000);
 		
-		WebElement internetButton = webDriver.findElement(By.cssSelector("#content > section.c-support-category-submenu.js-support-category-submenu.js-height-support-category-submenu.theme-bg.without-small-title.first-page-element > div > div > div.row.submenu-secondary-wrapper > div.col-md-7.menu-list-wrapper > ul > li:nth-child(2) > a"));
+		String handle1 = webDriver.getWindowHandle();
+		
+		webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/div[2]/div[3]/div[2]/div/div/div/div/section/div/div[3]/a")).click();
+		
+		for(String handle: webDriver.getWindowHandles()) {
+			if (!handle.equals(handle1)) {
+				webDriver.switchTo().window(handle);
+				break;
+			}
+		}
+		
+		Thread.sleep(3000);
+		webDriver.close();
+		webDriver.switchTo().window(handle1);
+		Thread.sleep(3000);
+		
+		JavascriptExecutor scroll2 = (JavascriptExecutor) webDriver;
+		scroll2.executeScript("window.scrollBy(0,-1000)", "");
+		Thread.sleep(3000);
+		
+		WebElement internetButton = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[1]/div/div/div[1]/div[2]/ul/li[2]/a"));
 		internetButton.click();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		
-		WebElement searchInternet = webDriver.findElement(By.cssSelector("#google-search-app > div.js-google-custom-search-form.p-google-custom-search-form.clearfix > div > form > input"));
+		WebElement searchInternet = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/div[1]/div/div[1]/div/form/input"));
 		searchInternet.sendKeys("Test");
 		Thread.sleep(3000);
 		
-		WebElement searchInternetButton = webDriver.findElement(By.cssSelector("#google-search-app > div.js-google-custom-search-form.p-google-custom-search-form.clearfix > div > span"));
-		searchInternetButton.click();
-		Thread.sleep(5000);
+		JavascriptExecutor scroll3 = (JavascriptExecutor) webDriver;
+		scroll3.executeScript("window.scrollBy(0,1000)", "");
+		Thread.sleep(3000);
 		
-		WebElement telefonijaButton = webDriver.findElement(By.cssSelector("#content > section.c-support-category-submenu.js-support-category-submenu.js-height-support-category-submenu.theme-bg.without-small-title.first-page-element > div > div > div.row.submenu-secondary-wrapper > div.col-md-7.menu-list-wrapper > ul > li:nth-child(3) > a"));
+		WebElement unifiButton = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/div[3]/div[1]/div/ul/li[2]/a"));
+		unifiButton.click();
+		Thread.sleep(3000);
+		
+		WebElement emailButton = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/div[3]/div[1]/div/ul/li[3]/a"));
+		emailButton.click();
+		Thread.sleep(3000);
+		
+		String handle2 = webDriver.getWindowHandle();
+		
+		webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/div[3]/div[3]/div[3]/div/div/div/div/section/div/div[3]/a")).click();
+		
+		for(String handle: webDriver.getWindowHandles()) {
+			if (!handle.equals(handle2)) {
+				webDriver.switchTo().window(handle);
+				break;
+			}
+		}
+		
+		Thread.sleep(3000);
+		webDriver.close();
+		webDriver.switchTo().window(handle2);
+		Thread.sleep(3000);
+		
+		JavascriptExecutor scroll4 = (JavascriptExecutor) webDriver;
+		scroll4.executeScript("window.scrollBy(0,-1000)", "");
+		Thread.sleep(3000);
+		
+		WebElement telefonijaButton = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[1]/div/div/div[1]/div[2]/ul/li[3]/a"));
 		telefonijaButton.click();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		
-		WebElement searchTelefonija = webDriver.findElement(By.cssSelector("#google-search-app > div.js-google-custom-search-form.p-google-custom-search-form.clearfix > div > form > input"));
+		WebElement searchTelefonija = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/div[1]/div/div[1]/div/form/input"));
 		searchTelefonija.sendKeys("Test");
 		Thread.sleep(3000);
 		
-		WebElement searchTelefonijaButton = webDriver.findElement(By.cssSelector("#google-search-app > div.js-google-custom-search-form.p-google-custom-search-form.clearfix > div > span"));
-		searchTelefonijaButton.click();
-		Thread.sleep(5000);
+		JavascriptExecutor scroll5 = (JavascriptExecutor) webDriver;
+		scroll5.executeScript("window.scrollBy(0,1000)", "");
+		Thread.sleep(3000);
 		
-		WebElement prikljucenjeButton = webDriver.findElement(By.cssSelector("#content > section.c-support-category-submenu.js-support-category-submenu.js-height-support-category-submenu.theme-bg.without-small-title.first-page-element > div > div > div.row.submenu-secondary-wrapper > div.col-md-7.menu-list-wrapper > ul > li:nth-child(4) > a"));
+		WebElement unifon = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/div[2]/div[1]/div/ul/li[2]/a"));
+		unifon.click();
+		Thread.sleep(3000);
+		
+		String handle3 = webDriver.getWindowHandle();
+		
+		webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/div[2]/div[3]/div[2]/div/div/div/div/section/div/div[2]/a")).click();
+		
+		for(String handle: webDriver.getWindowHandles()) {
+			if (!handle.equals(handle3)) {
+				webDriver.switchTo().window(handle);
+				break;
+			}
+		}
+		
+		Thread.sleep(3000);
+		webDriver.close();
+		webDriver.switchTo().window(handle3);
+		Thread.sleep(3000);
+		
+		JavascriptExecutor scroll6 = (JavascriptExecutor) webDriver;
+		scroll6.executeScript("window.scrollBy(0,-1000)", "");
+		Thread.sleep(3000);
+		
+		WebElement prikljucenjeButton = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[1]/div/div/div[1]/div[2]/ul/li[4]/a"));
 		prikljucenjeButton.click();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		
 		WebElement searchPrikljucenje = webDriver.findElement(By.cssSelector("#google-search-app > div.js-google-custom-search-form.p-google-custom-search-form.clearfix > div > form > input"));
 		searchPrikljucenje.sendKeys("Test");
 		Thread.sleep(3000);
 		
-		WebElement searchPrikljucenjeButton = webDriver.findElement(By.cssSelector("#google-search-app > div.js-google-custom-search-form.p-google-custom-search-form.clearfix > div > span"));
-		searchPrikljucenjeButton.click();
-		Thread.sleep(5000);
+		
+		
+		
 		
 		
 	}
@@ -826,6 +890,5 @@ class telemachba {
 		Thread.sleep(3000);
 		
 	}
-	
 }
 
