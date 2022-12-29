@@ -506,11 +506,6 @@ class telemachba {
 		searchPrikljucenje.sendKeys("Test");
 		Thread.sleep(3000);
 		
-		
-		
-		
-		
-		
 	}
 	/* Testing the "Aplikacije" and "My Telemach" options within the application, 
 	 * there is an option to test the button and switch to "My Telemach." 
@@ -890,5 +885,84 @@ class telemachba {
 		Thread.sleep(3000);
 		
 	}
+	/* 
+	 * Visiting other websites (EON, TotalTV, TV Vodic, Facebook page) and testing the search option on the main page*/
+	@Test
+	void EONTotalTvVodic() throws InterruptedException {
+		webDriver.get(baseUrl);
+		webDriver.manage().window().maximize();
+		Thread.sleep(3000);
+		
+		String handle1 = webDriver.getWindowHandle();
+		
+		webDriver.findElement(By.xpath("/html/body/div[3]/header/div[1]/div/nav/ul[1]/li[5]/a")).click();
+		
+		for(String handle: webDriver.getWindowHandles()) {
+			if (!handle.equals(handle1)) {
+				webDriver.switchTo().window(handle);
+				break;
+			}
+		}
+		
+		Thread.sleep(4000);
+		webDriver.close();
+		webDriver.switchTo().window(handle1);
+		Thread.sleep(3000);
+		
+		
+		webDriver.findElement(By.xpath("/html/body/div[3]/header/div[1]/div/nav/ul[1]/li[6]/a")).click();
+		
+		for(String handle: webDriver.getWindowHandles()) {
+			if (!handle.equals(handle1)) {
+				webDriver.switchTo().window(handle);
+				break;
+			}
+		}
+		
+		Thread.sleep(3000);
+		webDriver.close();
+		webDriver.switchTo().window(handle1);
+		Thread.sleep(3000);
+		
+		
+		webDriver.findElement(By.xpath("/html/body/div[3]/header/div[1]/div/nav/ul[1]/li[7]/a")).click();
+		
+		for(String handle: webDriver.getWindowHandles()) {
+			if (!handle.equals(handle1)) {
+				webDriver.switchTo().window(handle);
+				break;
+			}
+		}
+		
+		Thread.sleep(4000);
+		webDriver.close();
+		webDriver.switchTo().window(handle1);
+		Thread.sleep(3000);
+		
+		WebElement search = webDriver.findElement(By.xpath("/html/body/div[3]/header/div[1]/div/nav/aside/div/div/div/form/table/tbody/tr/td[2]/button"));
+		search.click();
+		Thread.sleep(1000);
+		
+		WebElement searchTest = webDriver.findElement(By.xpath("/html/body/div[3]/header/div[1]/div/nav/aside/div/div/div/form/table/tbody/tr/td[1]/div/table/tbody/tr/td[1]/input"));
+		searchTest.sendKeys("Test");
+		Thread.sleep(3000);
+		
+		JavascriptExecutor scroll = (JavascriptExecutor) webDriver;
+		scroll.executeScript("window.scrollBy(0,1800)", "");
+		Thread.sleep(3000);
+		
+		webDriver.findElement(By.xpath("/html/body/div[3]/footer/nav/div[2]/div/ul/li[1]/a")).click();
+		
+		for(String handle: webDriver.getWindowHandles()) {
+			if (!handle.equals(handle1)) {
+				webDriver.switchTo().window(handle);
+				break;
+			}
+		}
+		
+		Thread.sleep(4000);
+		webDriver.close();
+		webDriver.switchTo().window(handle1);
+}
 }
 
