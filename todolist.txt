@@ -10,16 +10,17 @@ To do list:
 6. menuTest() -  ✓ 
 7. podrskaTest() - ✓
 8. EONTotalTvVodic() - ✓
+9. tidalTest() - ✓
 ---------------------------------------------------
 			DOING
 ---------------------------------------------------
-9. oNamaTest() -  ✘ (moze se unaprijediti)
-10. EONTVTest() -  ✘ (moze biti podijeljen u dva dijela (veliki test))
+10. oNamaTest() -  ✘ (moze se unaprijediti)
+11. EONTVTest() -  ✘ (moze biti podijeljen u dva dijela (veliki test))
 ---------------------------------------------------
 			TO DO
 ---------------------------------------------------
-11. poslovniTest1 () - ✘ ------> (Poslovni-> Telemach Cloud-> Web Hosting-> CPanel Superior-> Narucite-> Dalje po izboru)
-12. poslovniTest2 () - ✘ ------> (Poslovni-> Paketi-> Biznis Paketi-> Biznis 3-> Narucite-> Popuni podatke -> Posaljite)
+12. poslovniTest1 () - ✘ ------> (Poslovni-> Telemach Cloud-> Web Hosting-> CPanel Superior-> Narucite-> Dalje po izboru)
+13. poslovniTest2 () - ✘ ------> (Poslovni-> Paketi-> Biznis Paketi-> Biznis 3-> Narucite-> Popuni podatke -> Posaljite)
 ---------------------------------------------------
 
 1. Opcija Poslovni (napisati neki test ili vise testova)

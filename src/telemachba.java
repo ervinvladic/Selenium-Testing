@@ -964,5 +964,75 @@ class telemachba {
 		webDriver.close();
 		webDriver.switchTo().window(handle1);
 }
+	/* 
+	 * Testing of Tidal located within the "Aplikacije."  Buttons and questions within Tidal */
+	@Test
+	void tidalTest() throws InterruptedException {
+		webDriver.get(baseUrl);
+		webDriver.manage().window().maximize();
+		Thread.sleep(3000);
+		
+		WebElement aplikacijeButton = webDriver.findElement(By.xpath("/html/body/div[3]/header/div[2]/div/div/nav/ul/li[4]/a"));
+		aplikacijeButton.click();
+		Thread.sleep(3000);
+		
+		WebElement tidalButton = webDriver.findElement(By.xpath("/html/body/div[3]/header/div[2]/div/div/nav/ul/li[4]/ul/li[7]/a"));
+		tidalButton.click();
+		Thread.sleep(3000);
+		
+		JavascriptExecutor scroll = (JavascriptExecutor) webDriver;
+		scroll.executeScript("window.scrollBy(0,800)", "");
+		Thread.sleep(2000);
+		
+		WebElement button1 = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[2]/div/div[1]/div/ol/li[2]"));
+		button1.click();
+		Thread.sleep(3000);
+		
+		WebElement button2 = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[2]/div/div[1]/div/ol/li[3]"));
+		button2.click();
+		Thread.sleep(3000);
+		
+		WebElement button3 = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[2]/div/div[1]/div/ol/li[4]"));
+		button3.click();
+		Thread.sleep(3000);
+		
+		WebElement button4 = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[2]/div/div[1]/div/ol/li[5]"));
+		button4.click();
+		Thread.sleep(3000);
+		
+		WebElement button5 = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[2]/div/div[1]/div/ol/li[6]"));
+		button5.click();
+		Thread.sleep(3000);
+		
+		JavascriptExecutor scroll2 = (JavascriptExecutor) webDriver;
+		scroll2.executeScript("window.scrollBy(0,2000)", "");
+		Thread.sleep(2000);
+		
+		WebElement saznajVise = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[5]/div/div/div/div/div/div/div/div[2]/div/div/div[1]/a"));
+		saznajVise.click();
+		Thread.sleep(3000);
+		
+		WebElement tidalPitanje = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[5]/div/div/div/div/div/div/div/div[2]/div/section/div/section/div/div[1]/div[1]/h4/a"));
+		tidalPitanje.click();
+		Thread.sleep(3000);
+		
+		WebElement tidalPitanje1 = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[5]/div/div/div/div/div/div/div/div[2]/div/section/div/section/div/div[1]/div[1]/h4/a/span"));
+		tidalPitanje1.click();
+		Thread.sleep(3000);
+		
+		JavascriptExecutor scroll3 = (JavascriptExecutor) webDriver;
+		scroll3.executeScript("window.scrollBy(0,500)", "");
+		Thread.sleep(2000);
+		
+		WebElement pitanje2 = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[5]/div/div/div/div/div/div/div/div[2]/div/div/div[2]/section/div/section/div/div[6]/div[1]/h4/a"));
+		pitanje2.click();
+		Thread.sleep(3000);
+		
+		WebElement pitanje22 = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[5]/div/div/div/div/div/div/div/div[2]/div/div/div[2]/section/div/section/div/div[6]/div[1]/h4/a/span"));
+		pitanje22.click();
+		Thread.sleep(2000);
+		
+		
+}
 }
 
