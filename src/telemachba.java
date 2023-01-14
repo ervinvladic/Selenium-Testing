@@ -993,6 +993,91 @@ class telemachba {
 		Thread.sleep(2000);
 		
 }
+	/* 
+	 * Testing functionality of social media buttons at the bottom of home screen (Facebook, Twitter, Youtube, LinkedIn, Instagram) */
+	@Test
+	void socijalneMreze() throws InterruptedException {
+		webDriver.get(baseUrl);
+		webDriver.manage().window().maximize();
+		Thread.sleep(3000);
+		
+		JavascriptExecutor scroll = (JavascriptExecutor) webDriver;
+		scroll.executeScript("window.scrollBy(0,3000)", "");
+		Thread.sleep(2000);
+		
+		String handle1 = webDriver.getWindowHandle();
+		
+		webDriver.findElement(By.xpath("/html/body/div[3]/footer/nav/div[2]/div/ul/li[1]/a")).click();
+		
+		for(String handle: webDriver.getWindowHandles()) {
+			if (!handle.equals(handle1)) {
+				webDriver.switchTo().window(handle);
+				break;
+			}
+		}
+		
+		Thread.sleep(5000);
+		webDriver.close();
+		webDriver.switchTo().window(handle1);
+		Thread.sleep(3000);
+		
+		webDriver.findElement(By.xpath("/html/body/div[3]/footer/nav/div[2]/div/ul/li[2]/a")).click();
+		
+		for(String handle: webDriver.getWindowHandles()) {
+			if (!handle.equals(handle1)) {
+				webDriver.switchTo().window(handle);
+				break;
+			}
+		}
+		
+		Thread.sleep(5000);
+		webDriver.close();
+		webDriver.switchTo().window(handle1);
+		Thread.sleep(3000);
+		
+		webDriver.findElement(By.xpath("/html/body/div[3]/footer/nav/div[2]/div/ul/li[3]/a")).click();
+		
+		for(String handle: webDriver.getWindowHandles()) {
+			if (!handle.equals(handle1)) {
+				webDriver.switchTo().window(handle);
+				break;
+			}
+		}
+		
+		Thread.sleep(5000);
+		webDriver.close();
+		webDriver.switchTo().window(handle1);
+		Thread.sleep(3000);
+		
+		webDriver.findElement(By.xpath("/html/body/div[3]/footer/nav/div[2]/div/ul/li[4]/a")).click();
+		
+		for(String handle: webDriver.getWindowHandles()) {
+			if (!handle.equals(handle1)) {
+				webDriver.switchTo().window(handle);
+				break;
+			}
+		}
+		
+		Thread.sleep(5000);
+		webDriver.close();
+		webDriver.switchTo().window(handle1);
+		Thread.sleep(3000);
+		
+		webDriver.findElement(By.xpath("/html/body/div[3]/footer/nav/div[2]/div/ul/li[5]/a")).click();
+		
+		for(String handle: webDriver.getWindowHandles()) {
+			if (!handle.equals(handle1)) {
+				webDriver.switchTo().window(handle);
+				break;
+			}
+		}
+		
+		Thread.sleep(5000);
+		webDriver.close();
+		webDriver.switchTo().window(handle1);
+		Thread.sleep(3000);
+
+}
 	
 }
 
