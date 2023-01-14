@@ -1,5 +1,7 @@
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.awt.Desktop.Action;
+
 import org.junit.Ignore;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
@@ -11,6 +13,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 
 class telemachba {
 	private static WebDriver webDriver;
@@ -41,7 +44,7 @@ class telemachba {
 	
 	
 	/* Testing the EON package ordering option. 
-	 * Filling out the order form and testing button functionality   */
+	 * Filling out the order form and testing button functionalityï¿½  */
 	@Test
 	void naruciEonPaket() throws InterruptedException {
 		webDriver.get(baseUrl);
@@ -55,7 +58,7 @@ class telemachba {
 		
 		JavascriptExecutor scroll1 = (JavascriptExecutor) webDriver;
 		scroll1.executeScript("window.scrollBy(0,300)", "");
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		
 		JavascriptExecutor scroll = (JavascriptExecutor) webDriver;
 		scroll.executeScript("window.scrollBy(300,1400)", "");
@@ -64,7 +67,7 @@ class telemachba {
 		WebElement naruciButton = webDriver.findElement(By.cssSelector(" body > div.page-wrap > section.eon-vertical-packages.js-eon-vertical-packages.js-open-footprint.banner-shadow > div > ul > li.bundle-item.package-wrap.package-class-2 > div.bundle-content.featured > div.buttons-section > a"));
 		
 		naruciButton.click();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		
 		WebElement ImeiPrezime = webDriver.findElement(By.cssSelector("#content > section > div > div.package-container > div.form-wrapper > form > div:nth-child(1) > input"));
 		ImeiPrezime.sendKeys("Test Tester");
@@ -80,7 +83,7 @@ class telemachba {
 		
 		JavascriptExecutor scroll2 = (JavascriptExecutor) webDriver;
 		scroll2.executeScript("window.scrollBy(0,300)", "");
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		
 		String handle1 = webDriver.getWindowHandle();
 		
@@ -126,7 +129,7 @@ class telemachba {
 	
 	/* Testing "Poslovnice". 
 	 * Opening the drop-down menu, selecting the city Visoko, options for customer centers, 
-	 * the company headquarters, and filling out the form for contacting the company.   
+	 * the company headquarters, and filling out the form for contacting the company.ï¿½  
 	 * */
 	@Test
 	void vidiPoslovnice() throws InterruptedException {
@@ -137,7 +140,6 @@ class telemachba {
 		WebElement najblizaPoslovnica = webDriver.findElement(By.xpath("/html/body/div[3]/header/div[1]/div/nav/ul[2]/li[1]/a/span"));
 		najblizaPoslovnica.click();
 		Thread.sleep(3000);
-		
 		
 		WebElement izaberiGrad=webDriver.findElement(By.cssSelector("#map-app > div > div.container.top-wrapper > div.dropdown-wrapper > div > button"));
 		izaberiGrad.click();
@@ -716,6 +718,10 @@ class telemachba {
 		Dodatniuredjaji.click();
 		Thread.sleep(3000);
 		
+		JavascriptExecutor scroll1 = (JavascriptExecutor) webDriver;
+		scroll1.executeScript("window.scrollBy(0,-1800)", "");
+		Thread.sleep(3000);
+		
 		WebElement EON = webDriver.findElement(By.xpath("/html/body/div[3]/header/div[2]/div/div/nav/ul/li[2]/ul/li[2]/a"));
 		EON.click();
 		Thread.sleep(3000);
@@ -764,22 +770,6 @@ class telemachba {
 		scroll3.executeScript("window.scrollBy(0,5000)", "");
 		Thread.sleep(3000);
 		
-		WebElement EONKidsPitanje = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[10]/div/section/div/div[1]/div[1]/h4/a"));
-		EONKidsPitanje.click();
-		Thread.sleep(3000);
-		
-		WebElement EONKidsPitanje1 = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[10]/div/section/div/div[1]/div[1]/h4/a/span"));
-		EONKidsPitanje1.click();
-		Thread.sleep(3000);
-		
-		WebElement EONKidsPitanje2 = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[10]/div/section/div/div[2]/div[1]/h4/a"));
-		EONKidsPitanje2.click();
-		Thread.sleep(3000);
-		
-		WebElement EONKidsPitanje22 = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[10]/div/section/div/div[2]/div[1]/h4/a/span"));
-		EONKidsPitanje22.click();
-		Thread.sleep(3000);
-		
 		WebElement EONKidsPitanje3 = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[10]/div/section/div/div[3]/div[1]/h4/a"));
 		EONKidsPitanje3.click();
 		Thread.sleep(3000); 
@@ -788,13 +778,6 @@ class telemachba {
 		EONKidsPitanje33.click();
 		Thread.sleep(3000);
 		
-		WebElement EONKidsPitanje4 = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[10]/div/section/div/div[4]/div[1]/h4/a"));
-		EONKidsPitanje4.click();
-		Thread.sleep(3000);
-		
-		WebElement EONKidsPitanje44 = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[10]/div/section/div/div[4]/div[1]/h4/a/span"));
-		EONKidsPitanje44.click();
-		Thread.sleep(3000);
 		
 		JavascriptExecutor scroll4 = (JavascriptExecutor) webDriver;
 		scroll4.executeScript("window.scrollBy(0,200)", "");
@@ -832,14 +815,6 @@ class telemachba {
 		scroll2.executeScript("window.scrollBy(0,3200)", "");
 		Thread.sleep(3000);
 		
-		WebElement pitanje1 = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[9]/div/section/div/div[1]/div[1]/h4/a"));
-		pitanje1.click();
-		Thread.sleep(3000);
-		
-		WebElement pitanje11 = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[9]/div/section/div/div[1]/div[1]/h4/a"));
-		pitanje11.click();
-		Thread.sleep(3000);
-		
 		WebElement pitanje2 = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[9]/div/section/div/div[2]/div[1]/h4/a/span"));
 		pitanje2.click();
 		Thread.sleep(3000);
@@ -866,22 +841,6 @@ class telemachba {
 		
 		WebElement pitanje44 = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[9]/div/section/div/div[4]/div[1]/h4/a/span"));
 		pitanje44.click();
-		Thread.sleep(3000);
-		
-		WebElement pitanje5 = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[9]/div/section/div/div[5]/div[1]/h4/a/span"));
-		pitanje5.click();
-		Thread.sleep(3000);
-		
-		WebElement pitanje55 = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[9]/div/section/div/div[5]/div[1]/h4/a"));
-		pitanje55.click();
-		Thread.sleep(3000);
-		
-		WebElement pitanje6 = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[9]/div/section/div/div[6]/div[1]/h4/a/span"));
-		pitanje6.click();
-		Thread.sleep(3000);
-		
-		WebElement pitanje66 = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[9]/div/section/div/div[6]/div[1]/h4/a/span"));
-		pitanje66.click();
 		Thread.sleep(3000);
 		
 	}
@@ -951,21 +910,22 @@ class telemachba {
 		scroll.executeScript("window.scrollBy(0,1800)", "");
 		Thread.sleep(3000);
 		
-		webDriver.findElement(By.xpath("/html/body/div[3]/footer/nav/div[2]/div/ul/li[1]/a")).click();
+		WebElement newsLetter = webDriver.findElement(By.xpath("/html/body/div[3]/footer/nav/div[2]/ul/li[2]/a"));
+		newsLetter.click();
+		Thread.sleep(3000);
 		
-		for(String handle: webDriver.getWindowHandles()) {
-			if (!handle.equals(handle1)) {
-				webDriver.switchTo().window(handle);
-				break;
-			}
-		}
+		WebElement email = webDriver.findElement(By.xpath("/html/body/div[7]/div/div/div[2]/form/input"));
+		email.sendKeys("Test");
+		Thread.sleep(3000);
 		
-		Thread.sleep(4000);
-		webDriver.close();
-		webDriver.switchTo().window(handle1);
+		WebElement close = webDriver.findElement(By.xpath("/html/body/div[7]/div/div/div[1]/button"));
+		close.click();
+		Thread.sleep(3000);
+		
+		
 }
 	/* 
-	 * Testing of Tidal located within the "Aplikacije."  Buttons and questions within Tidal */
+	 * Testing of Tidal located within the "Aplikacije."ï¿½ Buttons and questions within Tidal */
 	@Test
 	void tidalTest() throws InterruptedException {
 		webDriver.get(baseUrl);
@@ -1032,7 +992,9 @@ class telemachba {
 		pitanje22.click();
 		Thread.sleep(2000);
 		
-		
 }
+	
 }
+
+
 

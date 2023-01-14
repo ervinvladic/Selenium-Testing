@@ -11,11 +11,8 @@ To do list:
 7. podrskaTest() - ✓
 8. EONTotalTvVodic() - ✓
 9. tidalTest() - ✓
----------------------------------------------------
-			DOING
----------------------------------------------------
-10. oNamaTest() -  ✘ (moze se unaprijediti)
-11. EONTVTest() -  ✘ (moze biti podijeljen u dva dijela (veliki test))
+10. oNamaTest() - ✓
+11. EONTVTest() - ✓
 ---------------------------------------------------
 			TO DO
 ---------------------------------------------------
