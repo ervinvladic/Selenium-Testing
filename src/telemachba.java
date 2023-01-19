@@ -45,7 +45,7 @@ class telemachba {
 	
 	
 	/* Testing the EON package ordering option. 
-	 * Filling out the order form and testing button functionality�  */
+	 * Filling out the order form and testing button functionality   */
 	@Test
 	void naruciEonPaket() throws InterruptedException {
 		webDriver.get(baseUrl);
@@ -130,7 +130,7 @@ class telemachba {
 	
 	/* Testing "Poslovnice". 
 	 * Opening the drop-down menu, selecting the city Visoko, options for customer centers, 
-	 * the company headquarters, and filling out the form for contacting the company.�  
+	 * the company headquarters, and filling out the form for contacting the company.   
 	 * */
 	@Test
 	void vidiPoslovnice() throws InterruptedException {
@@ -925,7 +925,7 @@ class telemachba {
 		
 }
 	/* 
-	 * Testing of Tidal located within the "Aplikacije."� Buttons and questions within Tidal */
+	 * Testing of Tidal located within the "Aplikacije."  Buttons and questions within Tidal */
 	@Test
 	void tidalTest() throws InterruptedException {
 		webDriver.get(baseUrl);
@@ -1191,6 +1191,164 @@ class telemachba {
 		
 
 }
+	/* 
+	Testing business solutions site from telemach and ordering of one solution */
+	
+	@Test
+	void poslovniTest() throws InterruptedException {
+		webDriver.get(baseUrl);
+		webDriver.manage().window().maximize();
+		Thread.sleep(3000);
+		
+		
+		WebElement poslovniButton = webDriver.findElement(By.xpath("/html/body/div[3]/header/div[1]/div/nav/ul[1]/li[2]/a"));
+		poslovniButton.click();
+		Thread.sleep(3000);
+		
+		JavascriptExecutor scroll = (JavascriptExecutor) webDriver;
+		scroll.executeScript("window.scrollBy(0,3000)", "");
+		Thread.sleep(3000);
+		
+		WebElement mailRjesenja = webDriver.findElement(By.xpath("/html/body/div[3]/footer/nav/div/ul/li[6]/ul/li[3]/a"));
+		mailRjesenja.click();
+		Thread.sleep(3000);
+		
+		JavascriptExecutor scroll2 = (JavascriptExecutor) webDriver;
+		scroll2.executeScript("window.scrollBy(0,1500)", "");
+		Thread.sleep(3000);
+		
+		WebElement naruciteButton= webDriver.findElement(By.xpath("/html/body/div[3]/div/main/section[3]/div[1]/div/div/div/div/div/div/div/div/div/div[1]/div/div/div[3]/a"));
+		naruciteButton.click();
+		Thread.sleep(3000);
+		
+		WebElement Audiostreaming= webDriver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/form/div/div[1]/div/div/div[2]/fieldset[1]/div[2]/div[2]/div/ul/li[7]/div"));
+		Audiostreaming.click();
+		Thread.sleep(3000);
+		
+		WebElement imeCloudServera = webDriver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/form/div/div[1]/div/div/div[2]/fieldset[2]/div[1]/input"));
+		imeCloudServera.sendKeys("Test");
+		Thread.sleep(3000);
+		
+		WebElement CPU= webDriver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/form/div/div[1]/div/div/div[2]/fieldset[3]/div[1]/div[2]/div/span"));
+		CPU.click();
+		Thread.sleep(3000);
+		
+		WebElement RAM= webDriver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/form/div/div[1]/div/div/div[2]/fieldset[3]/div[2]/div[2]/div"));
+		RAM.click();
+		Thread.sleep(3000);
+		
+		WebElement SSD= webDriver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/form/div/div[1]/div/div/div[2]/fieldset[3]/div[4]/div"));
+		SSD.click();
+		Thread.sleep(3000);
+		
+		JavascriptExecutor scroll3 = (JavascriptExecutor) webDriver;
+		scroll3.executeScript("window.scrollBy(0,500)", "");
+		Thread.sleep(3000);
+		
+		WebElement korisnickoIme = webDriver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/form/div/div[1]/div/div/div[2]/fieldset[4]/div[1]/input"));
+		korisnickoIme.sendKeys("Test");
+		Thread.sleep(3000);
+		
+		WebElement lozinka = webDriver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/form/div/div[1]/div/div/div[2]/fieldset[4]/div[2]/input"));
+		lozinka.sendKeys("Test");
+		Thread.sleep(3000);
+		
+		WebElement checkBox= webDriver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/form/div/div[1]/div/div/div[2]/p/input"));
+		checkBox.click();
+		Thread.sleep(3000);
+			
+}
+	/* 
+	Testing contact us option for businesses */
+	
+	@Test
+	void poslovniTest2() throws InterruptedException {
+		webDriver.get(baseUrl);
+		webDriver.manage().window().maximize();
+		Thread.sleep(3000);
+		
+		JavascriptExecutor js=(JavascriptExecutor) webDriver;
+		
+		WebElement poslovniButton = webDriver.findElement(By.xpath("/html/body/div[3]/header/div[1]/div/nav/ul[1]/li[2]/a"));
+		poslovniButton.click();
+		Thread.sleep(2000);
+		
+		JavascriptExecutor scroll = (JavascriptExecutor) webDriver;
+		scroll.executeScript("window.scrollBy(0,2000)", "");
+		Thread.sleep(2000);
+		
+		WebElement kontaktirajteNas = webDriver.findElement(By.xpath("/html/body/div[3]/div/main/section[3]/div[1]/div[1]/div/div/div[2]/div/div[2]/div/div/a"));
+		kontaktirajteNas.click();
+		Thread.sleep(2000);
+		
+		WebElement nazivKompanije = webDriver.findElement(By.xpath("/html/body/div[4]/div/div/div/div/section/form/div[1]/div[1]/input"));
+		nazivKompanije.sendKeys("Test Tester");
+		Thread.sleep(2000);
+		
+		WebElement PDV = webDriver.findElement(By.xpath("/html/body/div[4]/div/div/div/div/section/form/div[1]/div[2]/input"));
+		PDV.sendKeys("3333");
+		Thread.sleep(2000);
+		
+		WebElement ID = webDriver.findElement(By.xpath("/html/body/div[4]/div/div/div/div/section/form/div[1]/div[3]/input"));
+		ID.sendKeys("3333");
+		Thread.sleep(2000);
+		
+		WebElement opcina = webDriver.findElement(By.xpath("/html/body/div[4]/div/div/div/div/section/form/div[1]/div[4]/input"));
+		opcina.sendKeys("Testna");
+		Thread.sleep(2000);
+		
+		WebElement naselje = webDriver.findElement(By.xpath("/html/body/div[4]/div/div/div/div/section/form/div[1]/div[5]/input"));
+		naselje.sendKeys("Test");
+		Thread.sleep(2000);
+		
+		WebElement nazivUlice = webDriver.findElement(By.xpath("/html/body/div[4]/div/div/div/div/section/form/div[1]/div[6]/input"));
+		nazivUlice.sendKeys("Test Tester");
+		Thread.sleep(2000);
+		
+		WebElement kucniBroj = webDriver.findElement(By.xpath("/html/body/div[4]/div/div/div/div/section/form/div[1]/div[7]/input"));
+		kucniBroj.sendKeys("8");
+		Thread.sleep(2000);
+		
+		WebElement Ime = webDriver.findElement(By.xpath("/html/body/div[4]/div/div/div/div/section/form/div[2]/div[1]/input"));
+		Ime.sendKeys("Test");
+		Thread.sleep(2000);
+		
+		WebElement Prezime = webDriver.findElement(By.xpath("/html/body/div[4]/div/div/div/div/section/form/div[2]/div[2]/input"));
+		Prezime.sendKeys("Tester");
+		Thread.sleep(2000);
+		
+		WebElement kontaktTelefon = webDriver.findElement(By.xpath("/html/body/div[4]/div/div/div/div/section/form/div[2]/div[3]/input"));
+		kontaktTelefon.sendKeys("033 333 333");
+		Thread.sleep(2000);
+		
+		WebElement email = webDriver.findElement(By.xpath("/html/body/div[4]/div/div/div/div/section/form/div[2]/div[4]/input"));
+		email.sendKeys("test.tester@test.com");
+		Thread.sleep(2000);
+		
+		
+		WebElement scroll2=webDriver.findElement(By.xpath("/html/body/div[4]/div/div/div/div/section/form/div[3]/div[2]/button"));
+		js.executeScript("arguments[0].scrollIntoView(true);",scroll2);
+		
+		Thread.sleep(2000);
+		
+		WebElement napomena = webDriver.findElement(By.xpath("/html/body/div[4]/div/div/div/div/section/form/div[2]/div[5]/textarea"));
+		napomena.sendKeys("Test!");
+		Thread.sleep(2000);
+		
+		WebElement posaljite = webDriver.findElement(By.xpath("/html/body/div[4]/div/div/div/div/section/form/div[3]/div[2]/button"));
+		posaljite.click();
+		Thread.sleep(2000);
+		
+		WebElement scroll3=webDriver.findElement(By.xpath("/html/body/div[4]/div/div/div/button/span"));
+		js.executeScript("arguments[0].scrollIntoView(true);",scroll3);
+		
+		Thread.sleep(2000);
+		
+		WebElement close = webDriver.findElement(By.xpath("/html/body/div[4]/div/div/div/button/span"));
+		close.click();
+		Thread.sleep(2000);
+		
+	}
 	
 }
 
