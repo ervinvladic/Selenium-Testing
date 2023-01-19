@@ -14,16 +14,12 @@ To do list:
 10. oNamaTest() - ✓
 11. EONTVTest() - ✓
 12. socijalneMreze() - ✓
+13. externalLinks() - ✓
 ---------------------------------------------------
 			TO DO
 ---------------------------------------------------
-12. poslovniTest1 () - ✘ ------> (Poslovni-> Telemach Cloud-> Web Hosting-> CPanel Superior-> Narucite-> Dalje po izboru)
-13. poslovniTest2 () - ✘ ------> (Poslovni-> Paketi-> Biznis Paketi-> Biznis 3-> Narucite-> Popuni podatke -> Posaljite)
-14. EONConnectTest() - ✘ ------> (Aplikacije -> EON Connect -> Otvoriti i zatvoriti(Resetovanje mreze, Promjena naziva mreze, Roditeljska kontrola, Optimizacija WiFi->
-					    Najcesce postavljena pitanja->Otvoriti sta je EON Connect usluga(zatvoriti)->saznaj vise->
-					    Otvoriti: Da li je usluga EON Connect besplatna za telemach korisnike(zatvoriti)	   
+14. poslovniTest() - ✘
+15. poslovniTest2() - ✘
 ---------------------------------------------------
 
-1. Opcija Poslovni (napisati neki test ili vise testova)
 
-2. Prijedlozi dodavanja ili izmjene (poboljsanja) postojecih testova
