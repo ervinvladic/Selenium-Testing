@@ -61,14 +61,21 @@ class telemachba {
 		scroll1.executeScript("window.scrollBy(0,300)", "");
 		Thread.sleep(2000);
 		
+		WebElement EONFULL = webDriver.findElement(By.xpath("/html/body/div[3]/section[1]/div/ul/li[2]/div[1]/div[1]/h2"));
+		String text2 = EONFULL.getText();
+		assertEquals(text2,"EON FULL");
+		
 		JavascriptExecutor scroll = (JavascriptExecutor) webDriver;
 		scroll.executeScript("window.scrollBy(300,1400)", "");
 		Thread.sleep(2000);
 		
 		WebElement naruciButton = webDriver.findElement(By.cssSelector(" body > div.page-wrap > section.eon-vertical-packages.js-eon-vertical-packages.js-open-footprint.banner-shadow > div > ul > li.bundle-item.package-wrap.package-class-2 > div.bundle-content.featured > div.buttons-section > a"));
-		
 		naruciButton.click();
 		Thread.sleep(2000);
+		
+		WebElement tvojipodaci = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section/div/div[1]/div[3]/h5"));
+		String text = tvojipodaci.getText();
+		assertEquals(text,"Tvoji podaci");
 		
 		WebElement ImeiPrezime = webDriver.findElement(By.cssSelector("#content > section > div > div.package-container > div.form-wrapper > form > div:nth-child(1) > input"));
 		ImeiPrezime.sendKeys("Test Tester");
@@ -98,6 +105,7 @@ class telemachba {
 		}
 		
 		Thread.sleep(4000);
+		webDriver.close();
 		webDriver.switchTo().window(handle1);
 		Thread.sleep(2000);
 
@@ -105,17 +113,17 @@ class telemachba {
 		saglasnost1.click();
 		Thread.sleep(2000);
 		
-		String handle2 = webDriver.getWindowHandle();
 		webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section/div/div[1]/div[3]/form/div[7]/p/a")).click();
 		
 		for(String handle3: webDriver.getWindowHandles()) {
-			if (!handle3.equals(handle2)) {
+			if (!handle3.equals(handle1)) {
 				webDriver.switchTo().window(handle3);
 				break;
 			}
 		}
 		Thread.sleep(4000);
-		webDriver.switchTo().window(handle2);
+		webDriver.close();
+		webDriver.switchTo().window(handle1);
 		Thread.sleep(2000);
 		
 		WebElement saglasnost2=webDriver.findElement(By.cssSelector("#content > section > div > div.package-container > div.form-wrapper > form > div:nth-child(6) > label > span"));
@@ -142,6 +150,10 @@ class telemachba {
 		najblizaPoslovnica.click();
 		Thread.sleep(2000);
 		
+		WebElement poslovnice = webDriver.findElement(By.xpath("/html/body/div[3]/main/section[1]/div/div/div[1]/div[1]/h1"));
+		String text = poslovnice.getText();
+		assertEquals(text,"Poslovnice");
+		
 		WebElement izaberiGrad=webDriver.findElement(By.cssSelector("#map-app > div > div.container.top-wrapper > div.dropdown-wrapper > div > button"));
 		izaberiGrad.click();
 		Thread.sleep(2000);
@@ -166,9 +178,17 @@ class telemachba {
 		sjedisteKompanije.click();
 		Thread.sleep(2000);
 		
+		WebElement sjedisteKompanijeText = webDriver.findElement(By.xpath("/html/body/div[3]/main/section[1]/div/div/div[1]/div[1]/h1"));
+		String text2 = sjedisteKompanijeText.getText();
+		assertEquals(text2,"Sjedište kompanije");
+		
 		WebElement kontaktirajteNas=webDriver.findElement(By.cssSelector("#content > section.c-support-category-submenu.js-support-category-submenu.js-height-support-category-submenu.theme-bg.first-page-element > div > div > div.row.submenu-secondary-wrapper > div.col-md-7.menu-list-wrapper > ul > li:nth-child(3) > a"));
 		kontaktirajteNas.click();
 		Thread.sleep(2000);
+		
+		WebElement kontaktirajteNasText = webDriver.findElement(By.xpath("/html/body/div[3]/main/section[1]/div/div/div[1]/div[1]/h1"));
+		String text3 = kontaktirajteNasText.getText();
+		assertEquals(text3,"Kontaktirajte nas");
 		
 		JavascriptExecutor scroll = (JavascriptExecutor) webDriver;
 		scroll.executeScript("window.scrollBy(0,600)", "");
@@ -231,7 +251,6 @@ class telemachba {
 		Thread.sleep(2000);
 		
 		
-		
 }
 	/* Putting the "O Nama" option to the test, 
 	 * analyzing the options within, and learning more about management personnel
@@ -266,6 +285,10 @@ class telemachba {
 		procitajteVise.click();
 		Thread.sleep(2000);
 		
+		WebElement menadzmentText = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[1]/div/div[4]/h2"));
+		String text2 = menadzmentText.getText();
+		assertEquals(text2,"Menadžment");
+		
 		JavascriptExecutor scroll1 = (JavascriptExecutor) webDriver;
 		scroll1.executeScript("window.scrollBy(0,100)", "");
 		Thread.sleep(2000);
@@ -274,6 +297,9 @@ class telemachba {
 		HajdiMostic.click();
 		Thread.sleep(2000);
 		
+		String url= webDriver.getCurrentUrl();
+		assertEquals(url,"https://telemach.ba/menadzment/hajdi-mostic-2/");
+		
 		JavascriptExecutor scroll2 = (JavascriptExecutor) webDriver;
 		scroll2.executeScript("window.scrollBy(0,100)", "");
 		Thread.sleep(2000);
@@ -281,6 +307,9 @@ class telemachba {
 		WebElement SevalBecirevic = webDriver.findElement(By.cssSelector("#content > section.container.story-page-wrapper > div > div.sidebar > ul > li:nth-child(2) > a > label"));
 		SevalBecirevic.click();
 		Thread.sleep(2000);
+		
+		String url2= webDriver.getCurrentUrl();
+		assertEquals(url2,"https://telemach.ba/menadzment/seval-becirevic/");
 		
 		JavascriptExecutor scroll3 = (JavascriptExecutor) webDriver;
 		scroll3.executeScript("window.scrollBy(0,100)", "");
@@ -306,6 +335,10 @@ class telemachba {
 		WebElement javniImenik = webDriver.findElement(By.cssSelector("#ft-navigation > li:nth-child(4) > ul > li > a"));
 		javniImenik.click();
 		Thread.sleep(2000);
+		
+		WebElement text = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section/div/div/div/div/div/div/div/div/div/h1"));
+		String text2 = text.getText();
+		assertEquals(text2,"BRZO I LAKO PRONAĐITE TELEFONSKI BROJ TELEMACH KORISNIKA");
 		
 		JavascriptExecutor scroll2 = (JavascriptExecutor) webDriver;
 		scroll2.executeScript("window.scrollBy(0,500)", "");
@@ -421,6 +454,10 @@ class telemachba {
 		internetButton.click();
 		Thread.sleep(2000);
 		
+		WebElement text = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[1]/div/div/div[1]/div[1]/h1"));
+		String text2 = text.getText();
+		assertEquals(text2,"Internet");
+		
 		JavascriptExecutor scroll3 = (JavascriptExecutor) webDriver;
 		scroll3.executeScript("window.scrollBy(0,1000)", "");
 		Thread.sleep(2000);
@@ -489,6 +526,9 @@ class telemachba {
 		prikljucenjeButton.click();
 		Thread.sleep(2000);
 		
+		String url= webDriver.getCurrentUrl();
+		assertEquals(url,"https://telemach.ba/podrska/servisi/prikljucenje/");
+		
 		WebElement searchPrikljucenje = webDriver.findElement(By.cssSelector("#google-search-app > div.js-google-custom-search-form.p-google-custom-search-form.clearfix > div > form > input"));
 		searchPrikljucenje.sendKeys("Test");
 		searchPrikljucenje.sendKeys(Keys.ENTER);
@@ -553,6 +593,10 @@ class telemachba {
 		aktivirajMojTelemach.click();
 		Thread.sleep(2000);
 		
+		WebElement text = webDriver.findElement(By.xpath("/html/body/app-root/app-login/div/div/div/div[2]/div/div/h1"));
+		String text2 = text.getText();
+		assertEquals(text2,"Prijava");
+		
 		WebElement korisnickoIme = webDriver.findElement(By.xpath("/html/body/app-root/app-login/div/div/div/div[2]/div/form/mat-form-field[1]/div/div[1]/div/input"));
 		korisnickoIme.sendKeys("test.tester@gmail.com");
 		Thread.sleep(2000);
@@ -572,6 +616,9 @@ class telemachba {
 		WebElement registracijaButton = webDriver.findElement(By.xpath("/html/body/app-root/app-login/div/div/div/div[2]/div/div/a"));
 		registracijaButton.click();
 		Thread.sleep(2000);
+		
+		String url= webDriver.getCurrentUrl();
+		assertEquals(url,"https://mojtelemach.ba/registration");
 		
 		WebElement IDKorisnika = webDriver.findElement(By.xpath("/html/body/app-root/app-registration/div/div/div/div[2]/div/form/div[1]/div[1]/mat-form-field[1]/div/div[1]/div/input"));
 		IDKorisnika.sendKeys("333333");
@@ -623,6 +670,9 @@ class telemachba {
 		WebElement ProgramskaShemaButton = webDriver.findElement(By.xpath("/html/body/div[3]/header/div[2]/div/div/nav/ul/li[2]/ul/li[3]/a"));
 		ProgramskaShemaButton.click();
 		Thread.sleep(2000);
+		
+		String url= webDriver.getCurrentUrl();
+		assertEquals(url,"https://telemach.ba/eon-tv/programska-shema/");
 		
 		JavascriptExecutor scroll = (JavascriptExecutor) webDriver;
 		scroll.executeScript("window.scrollBy(0,600)", "");
@@ -801,6 +851,10 @@ class telemachba {
 		scroll2.executeScript("window.scrollBy(0,3200)", "");
 		Thread.sleep(2000);
 		
+		WebElement pitanja = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[9]/div/section/div/h3"));
+		String text2 = pitanja.getText();
+		assertEquals(text2,"NAJČEŠĆE POSTAVLJENA PITANJA");
+		
 		WebElement pitanje2 = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[9]/div/section/div/div[2]/div[1]/h4/a/span"));
 		pitanje2.click();
 		Thread.sleep(2000);
@@ -850,6 +904,10 @@ class telemachba {
 		}
 		
 		Thread.sleep(4000);
+		
+		String url= webDriver.getCurrentUrl();
+		assertEquals(url,"https://bh.eon.tv/");
+		
 		webDriver.close();
 		webDriver.switchTo().window(handle1);
 		Thread.sleep(2000);
@@ -906,6 +964,10 @@ class telemachba {
 		}
 		
 		Thread.sleep(4000);
+		
+		String url2= webDriver.getCurrentUrl();
+		assertEquals(url2,"https://united.group/");
+		
 		webDriver.close();
 		webDriver.switchTo().window(handle1);
 		Thread.sleep(2000);
@@ -964,6 +1026,10 @@ class telemachba {
 		button5.click();
 		Thread.sleep(2000);
 		
+		WebElement text = webDriver.findElement(By.xpath("/html/body/div[3]/div[2]/main/section[2]/div/div[2]/div[6]/div/div[2]/h1"));
+		String text2 = text.getText();
+		assertEquals(text2,"Video & live stream");
+		
 		JavascriptExecutor scroll2 = (JavascriptExecutor) webDriver;
 		scroll2.executeScript("window.scrollBy(0,2000)", "");
 		Thread.sleep(2000);
@@ -1017,6 +1083,10 @@ class telemachba {
 		}
 		
 		Thread.sleep(4000);
+		
+		String url= webDriver.getCurrentUrl();
+		assertEquals(url,"https://www.facebook.com/TelemachBH");
+		
 		webDriver.close();
 		webDriver.switchTo().window(handle1);
 		Thread.sleep(2000);
@@ -1073,6 +1143,9 @@ class telemachba {
 		}
 		
 		Thread.sleep(4000);
+		String url2= webDriver.getCurrentUrl();
+		assertEquals(url2,"https://www.instagram.com/telemachbh/");
+		
 		webDriver.close();
 		webDriver.switchTo().window(handle1);
 		Thread.sleep(2000);
@@ -1110,6 +1183,10 @@ class telemachba {
 		}
 		
 		Thread.sleep(4000);
+		
+		String url= webDriver.getCurrentUrl();
+		assertEquals(url,"https://apps.apple.com/hr/app/eon-connect/id1500805349?l=hr");
+		
 		webDriver.close();
 		webDriver.switchTo().window(handle1);
 		Thread.sleep(2000);
@@ -1167,6 +1244,10 @@ class telemachba {
 		}
 		
 		Thread.sleep(4000);
+		
+		String url2= webDriver.getCurrentUrl();
+		assertEquals(url2,"http://www.hs-ktv.ba/?page_id=4626");
+		
 		webDriver.close();
 		webDriver.switchTo().window(handle2);
 		Thread.sleep(2000);
@@ -1198,64 +1279,71 @@ class telemachba {
 	void poslovniTest() throws InterruptedException {
 		webDriver.get(baseUrl);
 		webDriver.manage().window().maximize();
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		
 		
 		WebElement poslovniButton = webDriver.findElement(By.xpath("/html/body/div[3]/header/div[1]/div/nav/ul[1]/li[2]/a"));
 		poslovniButton.click();
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		
 		JavascriptExecutor scroll = (JavascriptExecutor) webDriver;
 		scroll.executeScript("window.scrollBy(0,3000)", "");
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		
 		WebElement mailRjesenja = webDriver.findElement(By.xpath("/html/body/div[3]/footer/nav/div/ul/li[6]/ul/li[3]/a"));
 		mailRjesenja.click();
-		Thread.sleep(3000);
+		Thread.sleep(2000);
+		
+		String url= webDriver.getCurrentUrl();
+		assertEquals(url,"https://poslovni.telemach.ba/poslovna-rjesenja/mail-rjesenja/");
 		
 		JavascriptExecutor scroll2 = (JavascriptExecutor) webDriver;
 		scroll2.executeScript("window.scrollBy(0,1500)", "");
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		
 		WebElement naruciteButton= webDriver.findElement(By.xpath("/html/body/div[3]/div/main/section[3]/div[1]/div/div/div/div/div/div/div/div/div/div[1]/div/div/div[3]/a"));
 		naruciteButton.click();
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		
 		WebElement Audiostreaming= webDriver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/form/div/div[1]/div/div/div[2]/fieldset[1]/div[2]/div[2]/div/ul/li[7]/div"));
 		Audiostreaming.click();
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		
 		WebElement imeCloudServera = webDriver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/form/div/div[1]/div/div/div[2]/fieldset[2]/div[1]/input"));
 		imeCloudServera.sendKeys("Test");
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		
 		WebElement CPU= webDriver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/form/div/div[1]/div/div/div[2]/fieldset[3]/div[1]/div[2]/div/span"));
 		CPU.click();
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		
 		WebElement RAM= webDriver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/form/div/div[1]/div/div/div[2]/fieldset[3]/div[2]/div[2]/div"));
 		RAM.click();
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		
 		WebElement SSD= webDriver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/form/div/div[1]/div/div/div[2]/fieldset[3]/div[4]/div"));
 		SSD.click();
-		Thread.sleep(3000);
+		Thread.sleep(2000);
+		
+		WebElement cijena = webDriver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/form/div/div[2]/div/div/div/fieldset/div/div[1]/div[2]/div/span"));
+		String text2 = cijena.getText();
+		assertEquals(text2,"289.86 KM");
 		
 		JavascriptExecutor scroll3 = (JavascriptExecutor) webDriver;
 		scroll3.executeScript("window.scrollBy(0,500)", "");
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		
 		WebElement korisnickoIme = webDriver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/form/div/div[1]/div/div/div[2]/fieldset[4]/div[1]/input"));
 		korisnickoIme.sendKeys("Test");
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		
 		WebElement lozinka = webDriver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/form/div/div[1]/div/div/div[2]/fieldset[4]/div[2]/input"));
 		lozinka.sendKeys("Test");
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		
 		WebElement checkBox= webDriver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/form/div/div[1]/div/div/div[2]/p/input"));
 		checkBox.click();
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 			
 }
 	/* 
@@ -1265,7 +1353,7 @@ class telemachba {
 	void poslovniTest2() throws InterruptedException {
 		webDriver.get(baseUrl);
 		webDriver.manage().window().maximize();
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		
 		JavascriptExecutor js=(JavascriptExecutor) webDriver;
 		
@@ -1280,6 +1368,10 @@ class telemachba {
 		WebElement kontaktirajteNas = webDriver.findElement(By.xpath("/html/body/div[3]/div/main/section[3]/div[1]/div[1]/div/div/div[2]/div/div[2]/div/div/a"));
 		kontaktirajteNas.click();
 		Thread.sleep(2000);
+		
+		WebElement adresa = webDriver.findElement(By.xpath("/html/body/div[4]/div/div/div/div/section/form/h4[1]"));
+		String text2 = adresa.getText();
+		assertEquals(text2,"Adresa korištenja odabrane usluge");
 		
 		WebElement nazivKompanije = webDriver.findElement(By.xpath("/html/body/div[4]/div/div/div/div/section/form/div[1]/div[1]/input"));
 		nazivKompanije.sendKeys("Test Tester");
@@ -1304,6 +1396,10 @@ class telemachba {
 		WebElement nazivUlice = webDriver.findElement(By.xpath("/html/body/div[4]/div/div/div/div/section/form/div[1]/div[6]/input"));
 		nazivUlice.sendKeys("Test Tester");
 		Thread.sleep(2000);
+		
+		WebElement kontaktpodaci = webDriver.findElement(By.xpath("/html/body/div[4]/div/div/div/div/section/form/h4[2]"));
+		String text3 = kontaktpodaci.getText();
+		assertEquals(text3,"Kontakt podaci");
 		
 		WebElement kucniBroj = webDriver.findElement(By.xpath("/html/body/div[4]/div/div/div/div/section/form/div[1]/div[7]/input"));
 		kucniBroj.sendKeys("8");
