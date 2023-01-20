@@ -1397,13 +1397,14 @@ class telemachba {
 		nazivUlice.sendKeys("Test Tester");
 		Thread.sleep(2000);
 		
+		WebElement kucniBroj = webDriver.findElement(By.xpath("/html/body/div[4]/div/div/div/div/section/form/div[1]/div[7]/input"));
+		kucniBroj.sendKeys("8");
+		Thread.sleep(2000);
+		
 		WebElement kontaktpodaci = webDriver.findElement(By.xpath("/html/body/div[4]/div/div/div/div/section/form/h4[2]"));
 		String text3 = kontaktpodaci.getText();
 		assertEquals(text3,"Kontakt podaci");
 		
-		WebElement kucniBroj = webDriver.findElement(By.xpath("/html/body/div[4]/div/div/div/div/section/form/div[1]/div[7]/input"));
-		kucniBroj.sendKeys("8");
-		Thread.sleep(2000);
 		
 		WebElement Ime = webDriver.findElement(By.xpath("/html/body/div[4]/div/div/div/div/section/form/div[2]/div[1]/input"));
 		Ime.sendKeys("Test");
